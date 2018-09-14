@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://use.fontawesome.com/10c162a72f.js"></script> 
+
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+<link href="http://fonts.googleapis.com/css?family=Hind+Guntur" rel="stylesheet">
+<link href="RunScenario.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="InLine">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+          <!-- The button below creates the hamburger drop-down for the hidden navbar elements-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-menu-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+          <a href="#" class="navbar-brand"></a> <!--.navbar-brand is for titling the navbar with a company's name or logo located on the left corner-->
+        
+        <div class="collapse navbar-collapse" id="my-navbar-menu-collapse"> <!--this class hides  the navbar elements included when the browser's window is minimized.The id is for the drop-down hamburger button to recognize-->
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Mission</a>
+            <li><a href="#">Objectives</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">New Tools</a></li>
+            <li><a href="#">Publications</a></li>
+            <div id="log-sign" class="nav navbar-nav "></div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ </div>
+    
+  <div class="main">
+    <div class="nav-side-menu">    
+      <div class="brand">Results</div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <div class="menu-list">
+          <ul class="menu-content collapsed">
+            <li data-toggle="collapse" data-target="#Policy_Targets" class="collapsed ">
+              <a href="#" rel="SS_Production"> Security of Supply - Production (ktoe) </a>
+            </li>
+            <li data-toggle="collapse" data-target="#Demand" class="collapsed">
+              <a href="#" rel="SS_NetImports"> Security of Supply - Net Imports (ktoe) </a>
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Gross_Electricity"> Electricity - Gross Electricity generation (GWh<span class="small">e</span>)</a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Net_Generation"> Electricity - Net Generation Capacity (MW<span class="small">e</span>) </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Transport_Passenger"> Transport-Passenger transport activity (Gtkm) </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Transport_Freight"> Transport-Freight transport activity (Gtkm) </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Transport_Energy"> Transport-Energy demand in transport (ktoe) </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Demand_by_sector"> Final energy demand by sector </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Demand_by_fuel"> Final energy demand by fuel </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="GHG_emissions"> Decarbonisation - Total GHG emissions (Mt of CO2 eq.) </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="CO2_emissions"> CO<span class="small">2</span> Emissions (energy related) </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="RES_Gross"> RES in Gross Final Energy Consumption (%)</a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Markets"> Markets and Competitivness </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="Energy_costs"> Energy related costs (M€'13)  </a> 
+            </li>
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed">
+              <a href="#" rel="System_costs"> System costs for GHG emission reduction (M€'13) </a> 
+            </li>
+          </ul>
+        </div>  
+    </div>
+  </div>
+
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="sc_save" class="modal-content animate" action="#" method="get">
+      <div class="containerbox">
+        <label><b>Scenario Name</b></label>
+        <input id="username" type="text" placeholder="Name your scenario!" required>
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Save</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
+        </div>
+      </div>
+    </form>
+  </div>
+
+    <div id="id02" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="Load_sc" class="modal-content animate" action="#" method="get">
+      <div class="containerbox">
+        <label class="list"><b>Saved Scenarios List</b></label>
+        <ul class="saved_scenarios"></ul>
+      </div>
+    </form>
+  </div>
+ 
+  <div class="container" id="main">
+
+    <div id='SS_Production' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Security of Supply - Producction (ktoe)<div class="btns" id="btn_SS_Production"></div></span>
+      <div  class="chart-container" id="svg_SS_Production"></div>
+    </div>
+
+    <div id='SS_NetImports' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Security of Supply - Net Imports (ktoe)<div class="btns" id="btn_SS_NetImports"></div></span>
+      <div class="chart-container" id="svg_SS_NetImports"></div>  
+    </div>
+
+    <div id='Gross_Electricity' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity-Gross Electricity generation (GWh<span class="small">e</span>)
+      <div class="btns" id="btn_Gross_Electricity"></div></span>
+      <div class="chart-container"  id="svg_Gross_Electricity"></div>
+    </div>
+
+    <div id='Net_Generation' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity - Net Generation Capacity (MW<span class="small">e</span>)<div class="btns" id="btn_Net_Generation"></div></span>
+      <div class="chart-container"  id="svg_Net_Generation"></div> 
+    </div>
+
+    <div id='Transport_Passenger' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Transport-Passenger transport activity (Gtkm)<div class="btns" id="btn_Transport_Passenger"></div> </span>
+      <div class="chart-container"  id="svg_Transport_Passenger"></div> 
+    </div>
+
+    <div id='Transport_Freight' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Transport-Freight transport activity (Gtkm)<div class="btns" id="btn_Transport_Freight"></div> </span>
+      <div class="chart-container"  id="svg_Transport_Freight"></div> 
+    </div>
+
+    <div id='Transport_Energy' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Transport-Energy demand in transport (ktoe)<div class="btns" id="btn_Transport_Energy"></div></span>
+      <div class="chart-container"  id="svg_Transport_Energy"></div>
+    </div>
+
+    <div id='Demand_by_sector' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand by sector<div class="btns" id="btn_Demand_by_sector"></div> </span>
+      <div class="chart-container"  id="svg_Demand_by_sector"></div> 
+    </div>
+
+    <div id='Demand_by_fuel' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand by fuel<div class="btns" id="btn_Demand_by_fuel"></div> </span>
+      <div class="chart-container"  id="svg_Demand_by_fuel"></div> 
+    </div>
+
+    <div id='GHG_emissions' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Decarbonisation - Total GHG emissions (Mt of CO2 eq.)<div class="btns" id="btn_GHG_emissions"></div> </span>
+      <div class="chart-container"  id="svg_GHG_emissions"></div>
+    </div>
+
+    <div id='CO2_emissions' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> CO<span class="small">2</span> Emissions (energy related)<div class="btns" id="btn_CO2_emissions"></div> </span>
+      <div class="chart-container"  id="svg_CO2_emissions"></div> 
+    </div>
+
+    <div id='RES_Gross' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> RES in Gross Final Energy Consumption (%)<div class="btns" id="btn_RES_Gross"></div> </span>
+      <div class="chart-container"  id="svg_RES_Gross"></div> 
+    </div>
+
+    <div id='Markets' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Markets and Competitivnes<div class="btns" id="btn_Markets"></div> </span>
+      <div class="chart-container"  id="svg_Markets"></div>
+    </div>
+    
+    <div id='Energy_costs' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Energy related costs (M€'13)<div class="btns" id="btn_Energy_costs"></div> </span>
+      <div class="chart-container"  id="svg_Energy_costs"></div>
+    </div>
+
+    <div id='System_costs' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> System costs for GHG emission reduction (M€'13) <div class="btns" id="btn_System_costs"></div></span>
+      <div class="chart-container"  id="svg_System_costs"></div>
+    </div>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script> 
+
+<script type="text/javascript" src="RunScenario_compare.js"></script>
+<script type="text/javascript" src="logedin.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="graphs.js"></script>-->
+</body>
+</html> 

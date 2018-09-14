@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>main page!!!</title>
+<script src="http://use.fontawesome.com/10c162a72f.js"></script> 
+
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+<link href="http://fonts.googleapis.com/css?family=Hind+Guntur" rel="stylesheet">
+<link href="new_site_main.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+          <!-- The button below creates the hamburger drop-down for the hidden navbar elements-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-menu-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+          <a href="#" class="navbar-brand"></a> <!--.navbar-brand is for titling the navbar with a company's name or logo located on the left corner-->
+        
+        <div class="collapse navbar-collapse" id="my-navbar-menu-collapse"> <!--this class hides  the navbar elements included when the browser's window is minimized.The id is for the drop-down hamburger button to recognize-->
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Mission</a>
+            <li><a href="#">Objectives</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">New Tools</a></li>
+            <li><a href="#">Publications</a></li>
+            <div id="log-sign" class="nav navbar-nav ">
+              <li><a href="#" onclick="document.getElementById('id02').style.display='block'">Login</a></li>
+              <li><a href="#" onclick="document.getElementById('id01').style.display='block'">Sign Up</a></li>
+              <li><a href="index.html">Logout</a></li>
+            </div> 
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+ <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="sign-up" class="modal-content animate" action="#" method="get">
+      <div class="containerbox">
+        <label><b>Username</b></label>
+        <input id="username" type="text" placeholder="Enter Username"  required>
+
+        <label><b>Email</b></label>
+        <input id="email" type="email" placeholder="Enter your email"  required>
+
+        <label><b>Password</b></label>
+        <input id="password" type="password" placeholder="Enter Password (8 chars min) *"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required> 
+
+        <p style="width:50%; margin-left:25%; font-weight:">*Password mast have at least one uppercase one lowercase and one special character and a number.</p>
+
+        <label><b>Repeat Password</b></label>
+        <input id="repeat_password" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="id02" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="login" class="modal-content animate" action="#" >
+      <div class="containerbox">
+        <label><b>Username</b></label>
+        <input id="username1" type="text" placeholder="Enter Username"  required>
+
+        <label><b>Password</b></label>
+        <input id="password1" type="password" placeholder="Enter Password"  required>
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Login</button>
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+        <a href="#" id="Reset" onclick="document.getElementById('id03').style.display='block';document.getElementById('id02').style.display='none'">Frogot Username or Password ?</a>
+      </div>
+    </form>
+  </div>
+
+  <div id="id03" class="modal">
+    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="Forgot" class="modal-content animate" action="#" >
+      <div class="containerbox">
+        <input id="usernameR" type="text" placeholder="Enter your email or username "  required>
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Submit</button>
+          <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="id04" class="modal">
+    <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="StartNew_sc" class="modal-content animate" action="#" method="get">
+      <div class="containerbox">
+        
+        <ul class="StartNew_data">
+          <li class="select"><b>Select Country</b></li>
+          <li>
+            <select id="country">
+              <option value='Austria'>Austria</option>
+              <option value='Belgium'>Belgium</option>
+              <option value='Bulgaria'>Bulgaria</option>
+              <option value='Croatia'>Croatia</option>                            
+              <option value='Cyprus'>Cyprus</option>
+              <option value='Czech'>Czech Republic</a></option>
+              <option value='Denmark'>Denmark</option>
+              <otpion value='Estonia'>Estonia</option>
+              <option value='Finland'>Finland</option>
+              <option value='France'>France</option>
+              <option value='Germany'>Germany</option>
+              <otpion value='Greece'>Greece</option>
+              <otpion value='Hungary'>Hungary</option>
+              <option value='Ireland'>Ireland</option>
+              <option value='Italy'>Italy</option>
+              <otpion value='Latvia'>Latvia</option>
+              <option value='Lithuania'>Lithuania</option>
+              <otpion value='Luxembourg'>Luxembourg</option>
+              <otpion value='Malta'>Malta</option>
+              <option value='Netherlands'>Netherlands</option>
+              <otpion value='Poland'>Poland</option>
+              <option value='Portugal'>Portugal</option>
+              <option value='Romania'>Romania</option>
+              <option value='Slovakia'>Slovakia</option>
+              <otpion value='Slovenia'>Slovenia</option>
+              <option value='Spain'>Spain</option>
+              <option value='Sweden'>Sweden</option>
+              <option value='UK'>United Kingdom</option>
+            </select>
+          </li>
+          <li class="select"><b>Select Year</b></li>
+          <li>
+            <select id="year">
+              <option>2020</option>
+              <option>2025</option>
+              <option>2030</option>
+              <option>2035</option>
+              <option>2040</option>
+              <option>2045</option>
+              <option>2050</option>
+            </select>
+          </li>
+          <li class="select"><b>Select Scenario Type</b></li>
+          <li>
+            <select id="type">
+              <option>Reference</option>
+              <option>Decarbonisation</option>
+            </select>
+          </li>     
+        </ul>
+        <ul class="buttons">
+          <button type="button" class="start">Start</button>
+          <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn3">Cancel</button>
+        </ul>
+      </div>
+    </form>
+  </div>
+
+  <div class="container body">
+    <div class="content">
+      <h1 class="title">About The Interactive Decarbonisation Simulator</h1>
+
+      <p class="container">The Interactive Decarbonisation Simulator (IDS) is a comprehensive, fully interactive energy model that is used by policy makers, industry associates, researchers and the general public across Europe. It is used to design decarbonisation strategies, evaluate energy scenarios and investigate the synergies and trade-offs in different low-carbon transitions.</p>
+      
+    </div>
+
+      <ul class="body">
+        <li><a id="start" href="#"><button class="btn-info">Start New Scenario</button></a></li>
+        <li><a id="load" href="#"><button class="btn-info">Load Scenario</button></a></li>
+      </ul>
+
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="signup-login.js"></script>
+</body>
+</html>

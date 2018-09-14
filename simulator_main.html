@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+<link href="http://fonts.googleapis.com/css?family=Hind+Guntur" rel="stylesheet">
+<link href="simulator_main.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="InLine">
+    <nav class="navbar navbar-default" role="navigation">
+          <!-- The button below creates the hamburger drop-down for the hidden navbar elements-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-menu-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+        
+        <div class="collapse navbar-collapse" id="my-navbar-menu-collapse"> <!--this class hides  the navbar elements included when the browser's window is minimized.The id is for the drop-down hamburger button to recognize-->
+          <ul class="nav navbar-nav">
+            <li><a href="#" class="INO_brand"></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Mission</a>
+            </li><li><a href="#">Objectives</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">New Tools</a></li>
+            <li><a href="#">Publications</a></li>
+            <div id="log-sign" class="nav navbar-nav ">
+              <li><a href="#" onclick="document.getElementById('id02').style.display='block'">Login</a></li>
+              <li><a href="#" onclick="document.getElementById('id01').style.display='block'">Sign Up</a></li>
+              <li><a href="index.html">Logout</a></li>
+            </div>
+          </ul>
+    </nav>
+
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="sign-up" class="modal-content animate" action="#" method="get">
+      <div class="containerbox">
+        <label><b>Username</b></label>
+        <input id="username" type="text" placeholder="Enter Username" required="">
+
+        <label><b>Email</b></label>
+        <input id="email" type="email" placeholder="Enter your email" required="">
+
+        <label><b>Password</b></label>
+        <input id="password" type="password" placeholder="Enter Password (8 chars min) *" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required=""> 
+
+        <label><b>Repeat Password</b></label>
+        <input id="repeat_password" type="password" placeholder="Repeat Password" name="psw-repeat" required="">
+        
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
+        </div>
+      </div>
+    </form>
+  </div>
+
+    <div id="id02" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="login" class="modal-content animate" action="#">
+      <div class="containerbox">
+        <label><b>Username</b></label>
+        <input id="username1" type="text" placeholder="Enter Username" required="">
+
+        <label><b>Password</b></label>
+        <input id="password1" type="password" placeholder="Enter Password" required="">
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Login</button>
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+        <a href="#" id="Reset" onclick="document.getElementById('id03').style.display='block'; document.getElementById('id02').style.display='none'">Frogot Username or Password ?</a>
+      </div>
+    </form>
+  </div>
+
+  <div id="id03" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="Forgot" class="modal-content animate" action="#">
+      <div class="containerbox">
+        <input id="usernameR" type="text" placeholder="Enter your email or username " required="">
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Submit</button>
+          <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container" id="Introduction">
+    <h1 class="title">Interactive Decarbonisation Simulator</h1>
+  </div>
+
+</div>
+
+
+
+ <div class="main">
+    <div class="nav-side-menu">    
+      <div class="brand">Input Parameters</div>
+<!--        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>-->
+        <div class="menu-list">
+          <ul class="menu-content collapsed">
+
+            <li data-toggle="collapse" data-target="#Drivers" class="collapsed" rel="drivers_rel">
+               Macroeconomic drivers <span class="arrow"></span>
+            </li>
+            <ul class="sub-menu collapse" id="Drivers" >
+              <li class="final_level"><a href="#" rel="Macro_pa-GDP">GDP</a></li>
+              <li class="final_level"><a href="#" rel="Macro_pa-Income_per_Capita">Income Per Capita</a></li>
+              <li  data-toggle="collapse" data-target="#Sect_actv" class="collapsed" rel="sect_actv_rel">
+                Sectoral Activity Indicators<span class="arrow"></span>
+              </li>
+                <ul class="targets collapse" id="Sect_actv" class="arrow">
+                  <li class="final_level"><a href="#" rel="Macro_pa-Number_of_Households">Number of households</a></li>
+                  <li  data-toggle="collapse" data-target="#industry" class="collapsed" rel="industry_rel">
+                    Industry<span class="arrow"></span>
+                  </li>
+                  <ul class="targets collapse" id="industry" class="arrow">
+                    <li class="final_level"><a href="#" rel="Macro_pa-Iron_and_steel">Iron &amp Steel</a></li>
+                    <li class="final_level"><a href="#" rel="Macro_pa-Food_Drink_and_Tobacco">Food, Drink &amp Tobacco</a></li>
+                    <li class="final_level"><a href="#" rel="Macro_pa-Paper_and_Pulp">Paper &amp Pulp</a></li>
+                    <li class="final_level"><a href="#" rel="Macro_pa-Engineering">Engineering</a></li>
+                    <li class="final_level"><a href="#" rel="Macro_pa-Textiles_and_Other_Industries">Textiles &amp Other Industries</a></li>
+                    <li class="final_level"><a href="#" rel="Macro_pa-Chemicals">Chemicals</a></li>
+                    <li class="final_level"><a href="#" rel="Macro_pa-Non_Ferrous">Non Ferrous</a></li>
+                  </ul>
+                  <li class="final_level"><a href="#" rel="Macro_pa-Services">Services</a></li>
+                  <li class="final_level"><a href="#" rel="Macro_pa-Agriculture">Agriculture</a></li>
+                </ul> 
+              </ul>
+
+            <li data-toggle="collapse" data-target="#Demand" class="collapsed" rel="demand_rel">
+                 Demand <span class="arrow"></span>
+            </li>
+            <ul class="sub-menu collapse" id="Demand">
+              <li data-toggle="collapse" data-target="#Residential" class="collapsed" rel="Residential_rel">
+                Residential <span class="arrow"></span>
+              </li>
+                <ul class="targets collapse" id="Residential">
+                  <li data-toggle="collapse" data-target="#HOUa" class="collapsed" rel="HOUa_rel">
+                    Heating &amp Cooling <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="HOUa">
+                    <li class="final_level"><a href="#" rel="Services_el-HOUa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-HOUa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-HOUa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-HOUa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-HOUa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#HBLa" class="collapsed" rel="HBLa_rel">
+                    Black Appliances <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="HBLa">
+                    <li class="final_level"><a href="#" rel="Services_el-HBLa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-HBLa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-HBLa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-HBLa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-HBLa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#HWHa" class="collapsed" rel="HWHa_rel">
+                    White Appliances <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="HWHa">
+                    <li class="final_level"><a href="#" rel="Services_el-HWHa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-HWHa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-HWHa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-HWHa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-HWHa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#HLHa" class="collapsed" rel="HLHa_rel">
+                    Lighting <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="HLHa">
+                    <li class="final_level"><a href="#" rel="Services_el-HLHa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-HLHa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-HLHa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-HLHa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-HLHa">Final energy demand</a></li>
+                  </ul>
+              </ul>
+
+                <li data-toggle="collapse" data-target="#Industry" class="collapsed" rel="Industry_rel">
+                  Industry <span class="arrow"></span>
+                </li>
+                <ul class="targets collapse" id="Industry">
+                  <li data-toggle="collapse" data-target="#ISa" class="collapsed" rel="ISa_rel">
+                    Iron &amp Steel <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="ISa">
+                    <li class="final_level"><a href="#" rel="Services_el-ISa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-ISa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-ISa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-ISa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-ISa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#NFa" class="collapsed" rel="NFa_rel">
+                    Non Ferrous <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="NFa">
+                    <li class="final_level"><a href="#" rel="Services_el-NFa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-NFa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-NFa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-NFa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_ShNFa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#CHa" class="collapsed" rel="CHa_rel">
+                    Chemicals <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="CHa">
+                    <li class="final_level"><a href="#" rel="Services_el-CHa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-CHa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-CHa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-CHa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-CHa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#BMa" class="collapsed" rel="BMa_rel">
+                    Building Materials <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="BMa">
+                    <li class="final_level"><a href="#" rel="Services_el-BMa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-BMa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-BMa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-BMa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-BMa">Final energy demand</a></li>
+                  </ul>
+                    
+                  <li data-toggle="collapse" data-target="#PPa" class="collapsed" rel="PPa_rel">
+                    Paper &amp Pulp <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="PPa">
+                    <li class="final_level"><a href="#" rel="Services_el-PPa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-PPa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-PPa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-PPa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-PPa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#FDa" class="collapsed" rel="FDa_rel">
+                    Food,Drink &amp Tobacco <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="FDa">
+                    <li class="final_level"><a href="#" rel="Services_el-FDa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-FDa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-FDa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-FDa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-FDa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#EGa" class="collapsed" rel="EGa_rel">
+                    Equipment Goods <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="EGa">
+                    <li class="final_level"><a href="#" rel="Services_el-EGa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-EGa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-EGa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-EGa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-EGa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#OTa" class="collapsed" rel="OTa_rel">
+                    Other Industries <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="OTa">
+                    <li class="final_level"><a href="#" rel="Services_el-OTa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-OTa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-OTa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-OTa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-OTa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#NEa" class="collapsed" rel="NEa_rel">
+                    No Energy Industries <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="NEa">
+                    <li class="final_level"><a href="#" rel="Services_el-NEa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-NEa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-NEa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-NEa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-NEa">Final energy demand</a></li>
+                  </ul>
+                </ul>
+
+                  <li data-toggle="collapse" data-target="#Tertiary" class="collapsed" rel="tertiary_rel">
+                    Tertiary <span class="arrow"></span>
+                  </li>
+                  <ul class="targets collapse" id="Tertiary">
+                  <li data-toggle="collapse" data-target="#SERa" class="collapsed" rel="SERa_rel">
+                    Services <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="SERa">
+                    <li class="final_level"><a href="#" rel="Services_el-SERa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-SERa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-SERa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-SERa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-SERa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#AGRa" class="collapsed" rel="AGRa_rel">
+                    Agriculture <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="AGRa">
+                    <li class="final_level"><a href="#" rel="Services_el-AGRa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-AGRa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-AGRa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-AGRa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-AGRa">Final energy demand</a></li>
+                  </ul>
+                </ul> 
+
+                  <li data-toggle="collapse" data-target="#Transport" class="collapsed" rel="transport_rel">
+                    Transport <span class="arrow"></span>
+                  </li>
+                  <ul class="targets collapse" id="Transport">
+                    <li data-toggle="collapse" data-target="#PTRa" class="collapsed" rel="PTRa_rel">
+                      Passenger Transport <span class="arrow"></span>
+                    </li> 
+                    <ul class="targets collapse" id="PTRa">
+                      <li class="final_level"><a href="#" rel="Services_el-PTRa">Useful energy demand</a></li>
+                      <li class="final_level"><a href="#" rel="Useful_serv-PTRa">Useful energy demand with savings</a></li>
+                      <li class="final_level"><a href="#" rel="Process_UEI-PTRa">Useful energy demand with savings per process</a></li>
+                      <li class="final_level"><a href="#" rel="Process_FEI-PTRa">Final energy intensity</a></li>
+                      <li class="final_level"><a href="#" rel="Energy_Sh-PTRa">Final energy demand</a></li>
+                    </ul>
+
+                  <li data-toggle="collapse" data-target="#FTRa" class="collapsed" rel="FTRa_rel">
+                    Freight Transport <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="FTRa">
+                    <li class="final_level"><a href="#" rel="Services_el-FTRa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-FTRa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-FTRa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-FTRa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-FTRa">Final energy demand</a></li>
+                  </ul>
+
+                  <li data-toggle="collapse" data-target="#OTRa" class="collapsed" rel="OTRa_rel">
+                    Other Transport &amp Pipeline <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="OTRa">
+                    <li class="final_level"><a href="#" rel="Services_el-OTRa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-OTRa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-OTRa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-OTRa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-OTRa">Final energy demand</a></li>
+                  </ul>
+ 
+                  <li data-toggle="collapse" data-target="#BUNa" class="collapsed" rel="BUNa_rel">
+                    Bunkers Navigation <span class="arrow"></span>
+                  </li> 
+                  <ul class="targets collapse" id="BUNa">
+                    <li class="final_level"><a href="#" rel="Services_el-BUNa">Useful energy demand</a></li>
+                    <li class="final_level"><a href="#" rel="Useful_serv-BUNa">Useful energy demand with savings</a></li>
+                    <li class="final_level"><a href="#" rel="Process_UEI-BUNa">Useful energy demand with savings per process</a></li>
+                    <li class="final_level"><a href="#" rel="Process_FEI-BUNa">Final energy intensity</a></li>
+                    <li class="final_level"><a href="#" rel="Energy_Sh-BUNa">Final energy demand</a></li>
+                  </ul>
+                </ul>
+            </ul>
+            <li id="Losses" class="final_level"><a href="#" rel="LOS_rate">Transmission and distribution losses</a></li>
+
+        </ul>
+    </div>
+    <button class="run">Run Scenario</button>
+  </div>
+
+  <div class="container" id="main">
+    <div class="explain_container" id="concept">
+            <h4 style="font-weight:bold;">Concept </h4>
+            <p >
+            The Interactive Decarbonisation Simulator (IDS) aims at providing an intuitive insight into decarbonisation strategies in order to facilitate stakeholder engagement. The tool will help understanding the mechanics of decarbonisation and the implications of modifying effort-sharing choices and other factors for the Member States and the EU.
+            The IDS aims at replicating the projection properties of the PRIMES model (country by country for the EU Member States and until 2050) while inviting users to interact with exogenous assumptions and visualising the implications for the decarbonisation pathways. 
+            By designing a few different decarbonisation strategies, the user can quickly get an intuitive understanding of which measures have a large effect and which don't, and where potential bottlenecks might lie.</p>
+            <h4 style="font-weight:bold;">Backend design</h4>
+            <p>The backend model development of the Prototype Interactive Decarbonisation Simulator (IDS) is based on PRIMES. PRIMES is a partial equilibrium modelling system that simulates an energy market equilibrium in the European Union and in each of its Member States. The model includes consistent EU carbon price trajectories. It proceeds in five-year steps and uses Eurostat data.</p>
+            <h4 style="font-weight:bold;">A note about the EUCO scenarios</h4>
+            <p>As part of the European Commission's Impact Assessment work in 2016, two core policy scenarios, several scenarios were built, with the EU Reference Scenario 2016 as a starting point. They model the achievement of the 2030 climate and energy targets as agreed by the European Council in 2014 .The main scenario, EUCO27 considers at least 40% cuts in greenhouse gas emissions (from 1990 levels), at least 27% share for renewable energy and at least 27% improvement in energy efficiency. Four variants to the EUCO27, considering different levels of energy efficiency improvements (30, 33, 35 and 40%) have been also considered to assess the impact of the proposed legal framework on energy efficiency.
+            </p>
+    </div>
+
+    <div id='drivers_rel' class="chart-container" style="display:none;"></div>
+    <div id='sect_actv_rel' class="chart-container" style="display:none;"></div>
+    <div id='industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='demand_rel' class="chart-container" style="display:none;"></div>
+    <div id='Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='HOUa_rel' class="chart-container" style="display:none;"></div>
+    <div id='HBLa_rel' class="chart-container" style="display:none;"></div>
+    <div id='HWHa_rel' class="chart-container" style="display:none;"></div>
+    <div id='HLHa_rel' class="chart-container" style="display:none;"></div>
+    <div id='Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='ISa_rel' class="chart-container" style="display:none;"></div>
+    <div id='NFa_rel' class="chart-container" style="display:none;"></div>
+    <div id='CHa_rel' class="chart-container" style="display:none;"></div>
+    <div id='BMa_rel' class="chart-container" style="display:none;"></div>
+    <div id='PPa_rel' class="chart-container" style="display:none;"></div>
+    <div id='FDa_rel' class="chart-container" style="display:none;"></div>
+    <div id='EGa_rel' class="chart-container" style="display:none;"></div>
+    <div id='OTa_rel' class="chart-container" style="display:none;"></div>
+    <div id='NEa_rel' class="chart-container" style="display:none;"></div>
+    <div id='tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='SERa_rel' class="chart-container" style="display:none;"></div>
+    <div id='AGRa_rel' class="chart-container" style="display:none;"></div>
+    <div id='transport_rel' class="chart-container" style="display:none;"></div>
+    <div id='PTRa_rel' class="chart-container" style="display:none;"></div>
+    <div id='FTRa_rel' class="chart-container" style="display:none;"></div>
+    <div id='OTRa_rel' class="chart-container" style="display:none;"></div>
+    <div id='BUNa_rel' class="chart-container" style="display:none;"></div>
+
+    <div id='Macro_pa-GDP' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers  <i class="fa fa-chevron-right" aria-hidden="true"></i> GDP </span>
+      <div  class="chart-container" id="svg_Macro_pa-GDP"></div>
+    </div>
+
+    <div id='Macro_pa-Income_per_Capita' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers <i class="fa fa-chevron-right" aria-hidden="true"></i>Income per Capita </span>
+      <div  class="chart-container" id="svg_Macro_pa-Income_per_Capita"></div>
+    </div>
+
+    <div id='Macro_pa-Number_of_Households' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers  <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Number of households </span>
+      <div  class="chart-container" id="svg_Macro_pa-Number_of_Households"></div>
+    </div>
+
+    <div id='Macro_pa-Iron_and_steel' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers  <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp steel </span>
+      <div  class="chart-container" id="svg_Macro_pa-Iron_and_steel"></div>
+    </div>
+
+    <div id='Macro_pa-Food_Drink_and_Tobacco' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers<i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, drink &amp tobacco </span>
+      <div  class="chart-container" id="svg_Macro_pa-Food_Drink_and_Tobacco"></div>
+    </div>
+
+    <div id='Macro_pa-Paper_and_Pulp' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp pulp </span>
+      <div  class="chart-container" id="svg_Macro_pa-Paper_and_Pulp"></div>
+    </div>
+    <div id='Macro_pa-Engineering' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Engineering </span>
+      <div  class="chart-container" id="svg_Macro_pa-Engineering"></div>
+    </div>
+
+    <div id='Macro_pa-Textiles_and_Other_Industries' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Textiles &amp other industries </span>
+      <div  class="chart-container" id="svg_Macro_pa-Textiles_and_Other_Industries"></div>
+    </div>
+
+    <div id='Macro_pa-Chemicals' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_Macro_pa-Chemicals"></div>
+    </div>
+
+    <div id='Macro_pa-Non_Ferrous' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_Macro_pa-Non_Ferrous"></div>
+    </div>
+
+    <div id='Macro_pa-Services' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers <i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators <i class="fa fa-chevron-right" aria-hidden="true"></i> Services</span>
+      <div  class="chart-container" id="svg_Macro_pa-Services"></div>
+    </div>
+    <div id='Macro_pa-Agriculture' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers<i class="fa fa-chevron-right" aria-hidden="true"></i> Secotral activity indicators  <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture</span>
+      <div  class="chart-container" id="svg_Macro_pa-Agriculture"></div>
+    </div>
+
+
+    <div id='Services_el-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand  <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i>Heating &amp Cooling <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-HOUa"></div>
+    </div>
+
+    <div id='Services_el-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-HBLa"></div>
+    </div>
+
+    <div id='Services_el-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand  </span>
+      <div  class="chart-container" id="svg_Services_el-HWHa"></div>
+    </div>
+
+    <div id='Services_el-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i>  Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand  </span>
+      <div  class="chart-container" id="svg_Services_el-HLHa"></div>
+    </div>
+
+    <div id='Services_el-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-SERa"></div>
+    </div>
+
+    <div id='Services_el-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-AGRa"></div>
+    </div>
+    <div id='Services_el-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-ISa"></div>
+    </div>
+    <div id='Services_el-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-NFa"></div>
+    </div>
+    <div id='Services_el-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-CHa"></div>
+    </div>
+    <div id='Services_el-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-BMa"></div>
+    </div>
+    <div id='Services_el-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-PPa"></div>
+    </div>
+    <div id='Services_el-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-FDa"></div>
+    </div>
+    <div id='Services_el-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-EGa"></div>
+    </div>
+    <div id='Services_el-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-OTa"></div>
+    </div>
+    <div id='Services_el-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-NEa"></div>
+    </div>
+    <div id='Services_el-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-PTRa"></div>
+    </div>
+    <div id='Services_el-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-FTRa"></div>
+    </div>
+    <div id='Services_el-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-OTRa"></div>
+    </div>
+    <div id='Services_el-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport<i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand </span>
+      <div  class="chart-container" id="svg_Services_el-BUNa"></div>
+    </div>
+
+    <div id='Useful_serv-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-HOUa"></div>
+    </div>
+
+    <div id='Useful_serv-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-HBLa"></div>
+    </div>
+
+    <div id='Useful_serv-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-HWHa"></div>
+    </div>
+
+    <div id='Useful_serv-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-HLHa"></div>
+    </div>
+
+    <div id='Useful_serv-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-SERa"></div>
+    </div>
+
+    <div id='Useful_serv-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-AGRa"></div>
+    </div>
+    <div id='Useful_serv-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-ISa"></div>
+    </div>
+    <div id='Useful_serv-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-NFa"></div>
+    </div>
+    <div id='Useful_serv-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-CHa"></div>
+    </div>
+    <div id='Useful_serv-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-BMa"></div>
+    </div>
+    <div id='Useful_serv-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-PPa"></div>
+    </div>
+    <div id='Useful_serv-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-FDa"></div>
+    </div>
+    <div id='Useful_serv-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-EGa"></div>
+    </div>
+    <div id='Useful_serv-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-OTa"></div>
+    </div>
+    <div id='Useful_serv-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-NEa"></div>
+    </div>
+    <div id='Useful_serv-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-PTRa"></div>
+    </div>
+    <div id='Useful_serv-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-FTRa"></div>
+    </div>
+    <div id='Useful_serv-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-OTRa"></div>
+    </div>
+    <div id='Useful_serv-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings </span>
+      <div  class="chart-container" id="svg_Useful_serv-BUNa"></div>
+    </div>
+
+    <div id='Process_UEI-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-HOUa"></div>
+    </div>
+
+    <div id='Process_UEI-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-HBLa"></div>
+    </div>
+
+    <div id='Process_UEI-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-HWHa"></div>
+    </div>
+
+    <div id='Process_UEI-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-HLHa"></div>
+    </div>
+
+    <div id='Process_UEI-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-SERa"></div>
+    </div>
+
+    <div id='Process_UEI-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-AGRa"></div>
+    </div>
+    <div id='Process_UEI-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-ISa"></div>
+    </div>
+    <div id='Process_UEI-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-NFa"></div>
+    </div>
+    <div id='Process_UEI-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-CHa"></div>
+    </div>
+    <div id='Process_UEI-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-BMa"></div>
+    </div>
+    <div id='Process_UEI-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp<i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-PPa"></div>
+    </div>
+    <div id='Process_UEI-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-FDa"></div>
+    </div>
+    <div id='Process_UEI-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-EGa"></div>
+    </div>
+    <div id='Process_UEI-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-OTa"></div>
+    </div>
+    <div id='Process_UEI-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-NEa"></div>
+    </div>
+    <div id='Process_UEI-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-PTRa"></div>
+    </div>
+    <div id='Process_UEI-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-FTRa"></div>
+    </div>
+    <div id='Process_UEI-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-OTRa"></div>
+    </div>
+    <div id='Process_UEI-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers <i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process </span>
+      <div  class="chart-container" id="svg_Process_UEI-BUNa"></div>
+    </div>
+
+    <div id='Process_FEI-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-HOUa"></div>
+    </div>
+
+    <div id='Process_FEI-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-HBLa"></div>
+    </div>
+
+    <div id='Process_FEI-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-HWHa"></div>
+    </div>
+
+    <div id='Process_FEI-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-HLHa"></div>
+    </div>
+
+    <div id='Process_FEI-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-SERa"></div>
+    </div>
+
+    <div id='Process_FEI-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-AGRa"></div>
+    </div>
+    <div id='Process_FEI-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-ISa"></div>
+    </div>
+    <div id='Process_FEI-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-NFa"></div>
+    </div>
+    <div id='Process_FEI-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals<i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-CHa"></div>
+    </div>
+    <div id='Process_FEI-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials<i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-BMa"></div>
+    </div>
+    <div id='Process_FEI-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp<i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-PPa"></div>
+    </div>
+    <div id='Process_FEI-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-FDa"></div>
+    </div>
+    <div id='Process_FEI-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-EGa"></div>
+    </div>
+    <div id='Process_FEI-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-OTa"></div>
+    </div>
+    <div id='Process_FEI-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-NEa"></div>
+    </div>
+    <div id='Process_FEI-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-PTRa"></div>
+    </div>
+    <div id='Process_FEI-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-FTRa"></div>
+    </div>
+    <div id='Process_FEI-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-OTRa"></div>
+    </div>
+    <div id='Process_FEI-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity </span>
+      <div  class="chart-container" id="svg_Process_FEI-BUNa"></div>
+    </div>
+
+    <div id='Energy_Sh-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-HOUa"></div>
+    </div>
+
+    <div id='Energy_Sh-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-HBLa"></div>
+    </div>
+
+    <div id='Energy_Sh-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-HWHa"></div>
+    </div>
+
+    <div id='Energy_Sh-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-HLHa"></div>
+    </div>
+
+    <div id='Energy_Sh-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-SERa"></div>
+    </div>
+
+    <div id='Energy_Sh-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-AGRa"></div>
+    </div>
+    <div id='Energy_Sh-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-ISa"></div>
+    </div>
+    <div id='Energy_Sh-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-NFa"></div>
+    </div>
+    <div id='Energy_Sh-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals<i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-CHa"></div>
+    </div>
+    <div id='Energy_Sh-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials<i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-BMa"></div>
+    </div>
+    <div id='Energy_Sh-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp<i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-PPa"></div>
+    </div>
+    <div id='Energy_Sh-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-FDa"></div>
+    </div>
+    <div id='Energy_Sh-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-EGa"></div>
+    </div>
+    <div id='Energy_Sh-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-OTa"></div>
+    </div>
+    <div id='Energy_Sh-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-NEa"></div>
+    </div>
+    <div id='Energy_Sh-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-PTRa"></div>
+    </div>
+    <div id='Energy_Sh-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-FTRa"></div>
+    </div>
+    <div id='Energy_Sh-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-OTRa"></div>
+    </div>
+    <div id='Energy_Sh-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers <i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand </span>
+      <div  class="chart-container" id="svg_Energy_Sh-BUNa"></div>
+    </div>
+  
+    <div id='LOS_rate' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Transmission and distribution losses </span>
+      <div  class="chart-container" id="svg_LOS_rate"></div>
+    </div>
+
+  </div>
+
+  <div id="wait"><!-- Place at bottom of page --></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+ 
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="simulator_main.js"></script>
+<script type="text/javascript" src="signup-login.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html> 

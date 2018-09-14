@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+<link href="http://fonts.googleapis.com/css?family=Hind+Guntur" rel="stylesheet">
+<link href="RunScenario.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="InLine">
+    <nav class="navbar navbar-default" role="navigation" >
+      <div class="container">
+        <!-- The button below creates the hamburger drop-down for the hidden navbar elements-->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-menu-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand"></a> <!--.navbar-brand is for titling the navbar with a company's name or logo located on the left corner--> 
+        <div class="collapse navbar-collapse" id="my-navbar-menu-collapse"> <!--this class hides  the navbar elements included when the browser's window is minimized.The id is for the drop-down hamburger button to recognize-->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Mission</a>
+            <li><a href="#">Objectives</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">New Tools</a></li>
+            <li><a href="#">Publications</a></li>
+            <div id="log-Sign" class="nav navbar-nav ">
+              <li><a href="#" onclick="document.getElementById('id02').style.display='block'">Login</a></li>
+              <li><a href="#" onclick="document.getElementById('id01').style.display='block'">Sign Up</a></li>
+              <li><a href="index.html">Logout</a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+    
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="sign-up" class="modal-content animate" action="#" method="get">
+      <div class="containerbox">
+        <label><b>Username</b></label>
+        <input id="username" type="text" placeholder="Enter Username"  required>
+
+        <label><b>Email</b></label>
+        <input id="email" type="email" placeholder="Enter your email"  required>
+
+        <label><b>Password</b></label>
+        <input id="password" type="password" placeholder="Enter Password (8 chars min) *"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required> 
+
+        <p style="width:50%; margin-left:25%; font-weight:">*Password mast have at least one uppercase one lowercase and one special character and a number.</p>
+
+        <label><b>Repeat Password</b></label>
+        <input id="repeat_password" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="id02" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="login" class="modal-content animate" action="#" >
+      <div class="containerbox">
+        <label><b>Username</b></label>
+        <input id="username1" type="text" placeholder="Enter Username"  required>
+
+        <label><b>Password</b></label>
+        <input id="password1" type="password" placeholder="Enter Password"  required>
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Login</button>
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+        <a href="#" id="Reset" onclick="document.getElementById('id03').style.display='block'; document.getElementById('id02').style.display='none'">Frogot Username or Password ?</a>
+      </div>
+    </form>
+  </div>
+
+  <div id="id03" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="Forgot" class="modal-content animate" action="#" >
+      <div class="containerbox">
+        <input id="usernameR" type="text" placeholder="Enter your email or username "  required>
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Submit</button>
+          <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>  
+        </div>
+      </div>
+    </form>
+  </div> 
+  
+</div> 
+
+
+ <div class="main">
+    <div class="nav-side-menu">    
+      <div class="brand">Output</div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <div class="menu-list">
+          <ul class="menu-content collapsed">
+
+            <li data-toggle="collapse" data-target="#vdriver" class="collapsed" rel="vdriver_rel">
+              <span class="arrow"></span> Macroeconomic drivers 
+            </li>
+            <ul class="sub-menu collapse" id="vdriver" >
+              <li data-toggle="collapse" data-target="#vdriver_Residential" class="collapsed" rel="vdriver_Residential_rel">
+              <span class="arrow"></span> Residential
+              </li>
+              <ul class="targets collapse" id="vdriver_Residential">
+                <li class="final_level"><a href="#" rel="vdriver-HOUa">Heating &amp Cooling</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-HBLa">Black Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-HWHa">White Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-HLHa">Lighting</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vdriver_Tertiary" class="collapsed" rel="vdriver_Tertiary_rel">
+              <span class="arrow"></span> Tertiary
+              </li>
+              <ul class="targets collapse" id="vdriver_Tertiary">
+                <li class="final_level"><a href="#" rel="vdriver-SERa">Services</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-AGRa">Agriculture</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vdriver_Industry" class="collapsed" rel="vdriver_Industry_rel">
+              <span class="arrow"></span> Industry
+              </li>
+              <ul class="targets collapse" id="vdriver_Industry">
+                <li class="final_level"><a href="#" rel="vdriver-ISa">Iron &amp Steel</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-NFa">Non Ferrous</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-CHa">Chemicals</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-BMa">Building Materials</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-PPa">Paper &amp Pulp</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-FDa">Food, Drink &amp Tobacco</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-EGa">Equipment Goods</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-OTa">Other Industries</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-NEa">Non Energy Industries</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vdriver_Transport" class="collapsed" rel="vdriver_Transport_rel">
+              <span class="arrow"></span> Transport
+              </li>
+              <ul class="targets collapse" id="vdriver_Transport">
+                <li class="final_level"><a href="#" rel="vdriver-PTRa">Passenger Transport</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-FTRa">Freight Transport</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-OTRa">Other Transport &amp Pipeline</a></li>
+                <li class="final_level"><a href="#" rel="vdriver-BUNa">Bunkers</a></li>
+              </ul>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#vservices" class="collapsed" rel="vservices_rel">
+               <span class="arrow"></span> Useful energy demand 
+            </li>
+            <ul class="sub-menu collapse" id="vservices" >
+              <li data-toggle="collapse" data-target="#vservices_Residential" class="collapsed" rel="vservices_Residential_rel">
+              <span class="arrow"></span> Residential
+              </li>
+              <ul class="targets collapse" id="vservices_Residential">
+                <li class="final_level"><a href="#" rel="vservices-HOUa">Heating &amp Cooling</a></li>
+                <li class="final_level"><a href="#" rel="vservices-HBLa">Black Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vservices-HWHa">White Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vservices-HLHa">Lighting</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vservices_Tertiary" class="collapsed" rel="vservices_Tertiary_rel">
+              <span class="arrow"></span> Tertiary
+              </li>
+              <ul class="targets collapse" id="vservices_Tertiary">
+                <li class="final_level"><a href="#" rel="vservices-SERa">Services</a></li>
+                <li class="final_level"><a href="#" rel="vservices-AGRa">Agriculture</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vservices_Industry" class="collapsed" rel="vservices_Industry_rel">
+              <span class="arrow"></span> Industry
+              </li>
+              <ul class="targets collapse" id="vservices_Industry">
+                <li class="final_level"><a href="#" rel="vservices-ISa">Iron &amp Steel</a></li>
+                <li class="final_level"><a href="#" rel="vservices-NFa">Non Ferrous</a></li>
+                <li class="final_level"><a href="#" rel="vservices-CHa">Chemicals</a></li>
+                <li class="final_level"><a href="#" rel="vservices-BMa">Building Materials</a></li>
+                <li class="final_level"><a href="#" rel="vservices-PPa">Paper &amp Pulp</a></li>
+                <li class="final_level"><a href="#" rel="vservices-FDa">Food, Drink &amp Tobacco</a></li>
+                <li class="final_level"><a href="#" rel="vservices-EGa">Equipment Goods</a></li>
+                <li class="final_level"><a href="#" rel="vservices-OTa">Other Industries</a></li>
+                <li class="final_level"><a href="#" rel="vservices-NEa">Non Energy Industries</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vservices_Transport" class="collapsed" rel="vservices_Transport_rel">
+              <span class="arrow"></span> Transport
+              </li>
+              <ul class="targets collapse" id="vservices_Transport">
+                <li class="final_level"><a href="#" rel="vservices-PTRa">Passenger Transport</a></li>
+                <li class="final_level"><a href="#" rel="vservices-FTRa">Freight Transport</a></li>
+                <li class="final_level"><a href="#" rel="vservices-OTRa">Other Transport &amp Pipeline</a></li>
+                <li class="final_level"><a href="#" rel="vservices-BUNa">Bunkers</a></li>
+              </ul>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#vuseful" class="collapsed" rel="vuseful_rel">
+              <span class="arrow"></span> Useful energy demand with savings
+            </li>
+            <ul class="sub-menu collapse" id="vuseful" >
+              <li data-toggle="collapse" data-target="#vuseful_Residential" class="collapsed" rel="vuseful_Residential_rel">
+              <span class="arrow"></span> Residential
+              </li>
+              <ul class="targets collapse" id="vuseful_Residential">
+                <li class="final_level"><a href="#" rel="vuseful-HOUa">Heating &amp Cooling</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-HBLa">Black Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-HWHa">White Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-HLHa">Lighting</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vuseful_Tertiary" class="collapsed" rel="vuseful_Tertiary_rel">
+              <span class="arrow"></span> Tertiary
+              </li>
+              <ul class="targets collapse" id="vuseful_Tertiary">
+                <li class="final_level"><a href="#" rel="vuseful-SERa">Services</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-AGRa">Agriculture</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vuseful_Industry" class="collapsed" rel="vuseful_Industry_rel">
+              <span class="arrow"></span> Industry
+              </li>
+              <ul class="targets collapse" id="vuseful_Industry">
+                <li class="final_level"><a href="#" rel="vuseful-ISa">Iron &amp Steel</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-NFa">Non Ferrous</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-CHa">Chemicals</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-BMa">Building Materials</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-PPa">Paper &amp Pulp</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-FDa">Food, Drink &amp Tobacco</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-EGa">Equipment Goods</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-OTa">Other Industries</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-NEa">Non Energy Industries</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vuseful_Transport" class="collapsed" rel="vuseful_Transport_rel">
+              <span class="arrow"></span> Transport
+              </li>
+              <ul class="targets collapse" id="vuseful_Transport">
+                <li class="final_level"><a href="#" rel="vuseful-PTRa">Passenger Transport</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-FTRa">Freight Transport</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-OTRa">Other Transport &amp Pipeline</a></li>
+                <li class="final_level"><a href="#" rel="vuseful-BUNa">Bunkers</a></li>
+              </ul>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#vprocess" class="collapsed" rel="vprocess_rel">
+               <span class="arrow"></span>Useful energy demand with savings per process 
+            </li>
+            <ul class="sub-menu collapse" id="vprocess" >
+              <li data-toggle="collapse" data-target="#vprocess_Residential" class="collapsed" rel="vprocess_Residential_rel">
+              <span class="arrow"></span> Residential
+              </li>
+              <ul class="targets collapse" id="vprocess_Residential">
+                <li class="final_level"><a href="#" rel="vprocess-HOUa">Heating &amp Cooling</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-HBLa">Black Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-HWHa">White Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-HLHa">Lighting</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vprocess_Tertiary" class="collapsed" rel="vprocess_Tertiary_rel">
+              <span class="arrow"></span> Tertiary
+              </li>
+              <ul class="targets collapse" id="vprocess_Tertiary">
+                <li class="final_level"><a href="#" rel="vprocess-SERa">Services</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-AGRa">Agriculture</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vprocess_Industry" class="collapsed" rel="vprocess_Industry_rel">
+              <span class="arrow"></span> Industry
+              </li>
+              <ul class="targets collapse" id="vprocess_Industry">
+                <li class="final_level"><a href="#" rel="vprocess-ISa">Iron &amp Steel</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-NFa">Non Ferrous</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-CHa">Chemicals</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-BMa">Building Materials</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-PPa">Paper &amp Pulp</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-FDa">Food, Drink &amp Tobacco</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-EGa">Equipment Goods</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-OTa">Other Industries</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-NEa">Non Energy Industries</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vprocess_Transport" class="collapsed" rel="vprocess_Transport_rel">
+              <span class="arrow"></span> Transport
+              </li>
+              <ul class="targets collapse" id="vprocess_Transport">
+                <li class="final_level"><a href="#" rel="vprocess-PTRa">Passenger Transport</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-FTRa">Freight Transport</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-OTRa">Other Transport &amp Pipeline</a></li>
+                <li class="final_level"><a href="#" rel="vprocess-BUNa">Bunkers</a></li>
+              </ul>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#venergy" class="collapsed" rel="venergy_rel">
+               <span class="arrow"></span>Final energy demand 
+            </li>
+            <ul class="sub-menu collapse" id="venergy" >
+              <li data-toggle="collapse" data-target="#venergy_Residential" class="collapsed" rel="venergy_Residential_rel">
+              <span class="arrow"></span> Residential
+              </li>
+              <ul class="targets collapse" id="venergy_Residential">
+                <li class="final_level"><a href="#" rel="venergy-HOUa">Heating &amp Cooling</a></li>
+                <li class="final_level"><a href="#" rel="venergy-HBLa">Black Appliances</a></li>
+                <li class="final_level"><a href="#" rel="venergy-HWHa">White Appliances</a></li>
+                <li class="final_level"><a href="#" rel="venergy-HLHa">Lighting</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#venergy_Tertiary" class="collapsed" rel="venergy_Tertiary_rel">
+              <span class="arrow"></span> Tertiary
+              </li>
+              <ul class="targets collapse" id="venergy_Tertiary">
+                <li class="final_level"><a href="#" rel="venergy-SERa">Services</a></li>
+                <li class="final_level"><a href="#" rel="venergy-AGRa">Agriculture</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#venergy_Industry" class="collapsed" rel="venergy_Industry_rel">
+              <span class="arrow"></span> Industry
+              </li>
+              <ul class="targets collapse" id="venergy_Industry">
+                <li class="final_level"><a href="#" rel="venergy-ISa">Iron &amp Steel</a></li>
+                <li class="final_level"><a href="#" rel="venergy-NFa">Non Ferrous</a></li>
+                <li class="final_level"><a href="#" rel="venergy-CHa">Chemicals</a></li>
+                <li class="final_level"><a href="#" rel="venergy-BMa">Building Materials</a></li>
+                <li class="final_level"><a href="#" rel="venergy-PPa">Paper &amp Pulp</a></li>
+                <li class="final_level"><a href="#" rel="venergy-FDa">Food, Drink &amp Tobacco</a></li>
+                <li class="final_level"><a href="#" rel="venergy-EGa">Equipment Goods</a></li>
+                <li class="final_level"><a href="#" rel="venergy-OTa">Other Industries</a></li>
+                <li class="final_level"><a href="#" rel="venergy-NEa">Non Energy Industries</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#venergy_Transport" class="collapsed" rel="venergy_Transport_rel">
+              <span class="arrow"></span> Transport
+              </li>
+              <ul class="targets collapse" id="venergy_Transport">
+                <li class="final_level"><a href="#" rel="venergy-PTRa">Passenger Transport</a></li>
+                <li class="final_level"><a href="#" rel="venergy-FTRa">Freight Transport</a></li>
+                <li class="final_level"><a href="#" rel="venergy-OTRa">Other Transport &amp Pipeline</a></li>
+                <li class="final_level"><a href="#" rel="venergy-BUNa">Bunkers</a></li>
+              </ul>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#vprocess_fei" class="collapsed" rel="vprocess_fei_rel">
+               <span class="arrow"></span> Final energy intensity
+            </li>
+            <ul class="sub-menu collapse" id="vprocess_fei" >
+              <li data-toggle="collapse" data-target="#vprocess_fei_Residential" class="collapsed" rel="vprocess_fei_Residential_rel">
+              <span class="arrow"></span> Residential
+              </li>
+              <ul class="targets collapse" id="vprocess_fei_Residential">
+                <li class="final_level"><a href="#" rel="vprocess_fei-HOUa">Heating &amp Cooling</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-HBLa">Black Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-HWHa">White Appliances</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-HLHa">Lighting</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vprocess_fei_Tertiary" class="collapsed" rel="vprocess_fei_Tertiary_rel">
+              <span class="arrow"></span> Tertiary
+              </li>
+              <ul class="targets collapse" id="vprocess_fei_Tertiary">
+                <li class="final_level"><a href="#" rel="vprocess_fei-SERa">Services</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-AGRa">Agriculture</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vprocess_fei_Industry" class="collapsed" rel="vprocess_fei_Industry_rel">
+              <span class="arrow"></span> Industry
+              </li>
+              <ul class="targets collapse" id="vprocess_fei_Industry">
+                <li class="final_level"><a href="#" rel="vprocess_fei-ISa">Iron &amp Steel</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-NFa">Non Ferrous</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-CHa">Chemicals</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-BMa">Building Materials</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-PPa">Paper &amp Pulp</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-FDa">Food, Drink &amp Tobacco</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-EGa">Equipment Goods</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-OTa">Other Industries</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-NEa">Non Energy Industries</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#vprocess_fei_Transport" class="collapsed" rel="vprocess_fei_Transport_rel">
+              <span class="arrow"></span> Transport
+              </li>
+              <ul class="targets collapse" id="vprocess_fei_Transport">
+                <li class="final_level"><a href="#" rel="vprocess_fei-PTRa">Passenger Transport</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-FTRa">Freight Transport</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-OTRa">Other Transport &amp Pipeline</a></li>
+                <li class="final_level"><a href="#" rel="vprocess_fei-BUNa">Bunkers</a></li>
+              </ul>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#CO2" class="collapsed" rel="CO2_rel">
+               <span class="arrow"></span>CO<span class="small">2</span> Emissions
+            </li>
+            <ul class="sub-menu collapse" id="CO2" >
+              <li data-toggle="collapse" data-target="#CO2_Residential" class="collapsed" rel="CO2_Residential_rel">
+              <span class="arrow"></span> Residential
+              </li>
+              <ul class="targets collapse" id="CO2_Residential">
+                <li class="final_level"><a href="#" rel="CO2-HOUa">Heating &amp Cooling</a></li>
+                <li class="final_level"><a href="#" rel="CO2-HBLa">Black Appliances</a></li>
+                <li class="final_level"><a href="#" rel="CO2-HWHa">White Appliances</a></li>
+                <li class="final_level"><a href="#" rel="CO2-HLHa">Lighting</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#CO2_Tertiary" class="collapsed" rel="CO2_Tertiary_rel">
+              <span class="arrow"></span> Tertiary
+              </li>
+              <ul class="targets collapse" id="CO2_Tertiary">
+                <li class="final_level"><a href="#" rel="CO2-SERa">Services</a></li>
+                <li class="final_level"><a href="#" rel="CO2-AGRa">Agriculture</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#CO2_Industry" class="collapsed" rel="CO2_Industry_rel">
+              <span class="arrow"></span> Industry
+              </li>
+              <ul class="targets collapse" id="CO2_Industry">
+                <li class="final_level"><a href="#" rel="CO2-ISa">Iron &amp Steel</a></li>
+                <li class="final_level"><a href="#" rel="CO2-NFa">Non Ferrous</a></li>
+                <li class="final_level"><a href="#" rel="CO2-CHa">Chemicals</a></li>
+                <li class="final_level"><a href="#" rel="CO2-BMa">Building Materials</a></li>
+                <li class="final_level"><a href="#" rel="CO2-PPa">Paper &amp Pulp</a></li>
+                <li class="final_level"><a href="#" rel="CO2-FDa">Food, Drink &amp Tobacco</a></li>
+                <li class="final_level"><a href="#" rel="CO2-EGa">Equipment Goods</a></li>
+                <li class="final_level"><a href="#" rel="CO2-OTa">Other Industries</a></li>
+                <li class="final_level"><a href="#" rel="CO2-NEa">Non Energy Industries</a></li>
+              </ul>
+              <li data-toggle="collapse" data-target="#CO2_Transport" class="collapsed" rel="CO2_Transport_rel">
+              <span class="arrow"></span> Transport
+              </li>
+              <ul class="targets collapse" id="CO2_Transport">
+                <li class="final_level"><a href="#" rel="CO2-PTRa">Passenger Transport</a></li>
+                <li class="final_level"><a href="#" rel="CO2-FTRa">Freight Transport</a></li>
+                <li class="final_level"><a href="#" rel="CO2-OTRa">Other Transport &amp Pipeline</a></li>
+                <li class="final_level"><a href="#" rel="CO2-BUNa">Bunkers</a></li>
+              </ul>
+            </ul>
+
+            <li class="final_level" ><a href="#" rel="vlosses">Transmission and distribution losses </a></li>          
+        </ul>
+    </div>
+  </div>
+</div>
+ 
+  <div class="container" id="main">
+
+    <div id='vdriver_rel' class="chart-container" style="display:none;"></div>
+    <div id='vdriver_Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='vdriver_Tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='vdriver_Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='vdriver_Transport_rel' class="chart-container" style="display:none;"></div>
+    <div id='vservices_rel' class="chart-container" style="display:none;"></div>
+    <div id='vservices_Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='vservices_Tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='vservices_Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='vservices_Transport_rel' class="chart-container" style="display:none;"></div>
+    <div id='vuseful_rel' class="chart-container" style="display:none;"></div>
+    <div id='vuseful_Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='vuseful_Tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='vuseful_Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='vuseful_Transport_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_Tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_Transport_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_fei_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_fei_Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_fei_Tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_fei_Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='vprocess_fei_Transport_rel' class="chart-container" style="display:none;"></div>
+    <div id='venergy_rel' class="chart-container" style="display:none;"></div>
+    <div id='venergy_Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='venergy_Tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='venergy_Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='CO2_Transport_rel' class="chart-container" style="display:none;"></div>
+    <div id='CO2_rel' class="chart-container" style="display:none;"></div>
+    <div id='CO2_Residential_rel' class="chart-container" style="display:none;"></div>
+    <div id='CO2_Tertiary_rel' class="chart-container" style="display:none;"></div>
+    <div id='CO2_Industry_rel' class="chart-container" style="display:none;"></div>
+    <div id='CO2_Transport_rel' class="chart-container" style="display:none;"></div>
+
+    <div id='vdriver-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)  <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling </span>
+      <div  class="chart-container" id="svg_vdriver-HOUa"></div>
+    </div>
+
+    <div id='vdriver-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)  <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i>Black Appliances </span>
+      <div  class="chart-container" id="svg_vdriver-HBLa"></div>
+    </div>
+
+    <div id='vdriver-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)  <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances </span>
+      <div  class="chart-container" id="svg_vdriver-HWHa"></div>
+    </div>
+
+    <div id='vdriver-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)  <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting </span>
+      <div  class="chart-container" id="svg_vdriver-HLHa"></div>
+    </div>
+
+    <div id='vdriver-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+      <div  class="chart-container" id="svg_vdriver-SERa"></div>
+    </div>
+
+    <div id='vdriver-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary  <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+      <div  class="chart-container" id="svg_vdriver-AGRa"></div>
+    </div>
+    <div id='vdriver-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel </span>
+      <div  class="chart-container" id="svg_vdriver-ISa"></div>
+    </div>
+    <div id='vdriver-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_vdriver-NFa"></div>
+    </div>
+    <div id='vdriver-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_vdriver-CHa"></div>
+    </div>
+    <div id='vdriver-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials</span>
+      <div  class="chart-container" id="svg_vdriver-BMa"></div>
+    </div>
+    <div id='vdriver-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp</span>
+      <div  class="chart-container" id="svg_vdriver-PPa"></div>
+    </div>
+    <div id='vdriver-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp </span>
+      <div  class="chart-container" id="svg_vdriver-FDa"></div>
+    </div>
+    <div id='vdriver-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods </span>
+      <div  class="chart-container" id="svg_vdriver-EGa"></div>
+    </div>
+    <div id='vdriver-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries </span>
+      <div  class="chart-container" id="svg_vdriver-OTa"></div>
+    </div>
+    <div id='vdriver-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Industry  <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries </span>
+      <div  class="chart-container" id="svg_vdriver-NEa"></div>
+    </div>
+    <div id='vdriver-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport  <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport </span>
+      <div  class="chart-container" id="svg_vdriver-PTRa"></div>
+    </div>
+    <div id='vdriver-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport  <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport </span>
+      <div  class="chart-container" id="svg_vdriver-FTRa"></div>
+    </div>
+    <div id='vdriver-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport  <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline </span>
+      <div  class="chart-container" id="svg_vdriver-OTRa"></div>
+    </div>
+    <div id='vdriver-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Macroeconomic drivers (vdriver)<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport  <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers </span>
+      <div  class="chart-container" id="svg_vdriver-BUNa"></div>
+    </div>
+
+    <div id='vservices-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i>Heating &amp Cooling </span>
+      <div  class="chart-container" id="svg_vservices-HOUa"></div>
+    </div>
+
+    <div id='vservices-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances </span>
+      <div  class="chart-container" id="svg_vservices-HBLa"></div>
+    </div>
+
+    <div id='vservices-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances </span>
+      <div  class="chart-container" id="svg_vservices-HWHa"></div>
+    </div>
+
+    <div id='vservices-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i>  Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting </span>
+      <div  class="chart-container" id="svg_vservices-HLHa"></div>
+    </div>
+
+    <div id='vservices-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+      <div  class="chart-container" id="svg_vservices-SERa"></div>
+    </div>
+
+    <div id='vservices-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+      <div  class="chart-container" id="svg_vservices-AGRa"></div>
+    </div>
+    <div id='vservices-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel </span>
+      <div  class="chart-container" id="svg_vservices-ISa"></div>
+    </div>
+    <div id='vservices-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_vservices-NFa"></div>
+    </div>
+    <div id='vservices-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_vservices-CHa"></div>
+    </div>
+    <div id='vservices-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials</span>
+      <div  class="chart-container" id="svg_vservices-BMa"></div>
+    </div>
+    <div id='vservices-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp</span>
+      <div  class="chart-container" id="svg_vservices-PPa"></div>
+    </div>
+    <div id='vservices-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp </span>
+      <div  class="chart-container" id="svg_vservices-FDa"></div>
+    </div>
+    <div id='vservices-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods </span>
+      <div  class="chart-container" id="svg_vservices-EGa"></div>
+    </div>
+    <div id='vservices-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries </span>
+      <div  class="chart-container" id="svg_vservices-OTa"></div>
+    </div>
+    <div id='vservices-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries </span>
+      <div  class="chart-container" id="svg_vservices-NEa"></div>
+    </div>
+    <div id='vservices-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport </span>
+      <div  class="chart-container" id="svg_vservices-PTRa"></div>
+    </div>
+    <div id='vservices-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport </span>
+      <div  class="chart-container" id="svg_vservices-FTRa"></div>
+    </div>
+    <div id='vservices-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline </span>
+      <div  class="chart-container" id="svg_vservices-OTRa"></div>
+    </div>
+    <div id='vservices-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand (vservices) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport<i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers </span>
+      <div  class="chart-container" id="svg_vservices-BUNa"></div>
+    </div>
+
+    <div id='vuseful-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling </span>
+      <div  class="chart-container" id="svg_vuseful-HOUa"></div>
+    </div>
+
+    <div id='vuseful-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances </span>
+      <div  class="chart-container" id="svg_vuseful-HBLa"></div>
+    </div>
+
+    <div id='vuseful-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances </span>
+      <div  class="chart-container" id="svg_vuseful-HWHa"></div>
+    </div>
+
+    <div id='vuseful-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting </span>
+      <div  class="chart-container" id="svg_vuseful-HLHa"></div>
+    </div>
+
+    <div id='vuseful-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+      <div  class="chart-container" id="svg_vuseful-SERa"></div>
+    </div>
+
+    <div id='vuseful-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+      <div  class="chart-container" id="svg_vuseful-AGRa"></div>
+    </div>
+    <div id='vuseful-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel </span>
+      <div  class="chart-container" id="svg_vuseful-ISa"></div>
+    </div>
+    <div id='vuseful-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_vuseful-NFa"></div>
+    </div>
+    <div id='vuseful-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_vuseful-CHa"></div>
+    </div>
+    <div id='vuseful-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials</span>
+      <div  class="chart-container" id="svg_vuseful-BMa"></div>
+    </div>
+    <div id='vuseful-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp</span>
+      <div  class="chart-container" id="svg_vuseful-PPa"></div>
+    </div>
+    <div id='vuseful-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp </span>
+      <div  class="chart-container" id="svg_vuseful-FDa"></div>
+    </div>
+    <div id='vuseful-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods </span>
+      <div  class="chart-container" id="svg_vuseful-EGa"></div>
+    </div>
+    <div id='vuseful-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries </span>
+      <div  class="chart-container" id="svg_vuseful-OTa"></div>
+    </div>
+    <div id='vuseful-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries </span>
+      <div  class="chart-container" id="svg_vuseful-NEa"></div>
+    </div>
+    <div id='vuseful-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport </span>
+      <div  class="chart-container" id="svg_vuseful-PTRa"></div>
+    </div>
+    <div id='vuseful-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport </span>
+      <div  class="chart-container" id="svg_vuseful-FTRa"></div>
+    </div>
+    <div id='vuseful-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline </span>
+      <div  class="chart-container" id="svg_vuseful-OTRa"></div>
+    </div>
+    <div id='vuseful-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings (vuseful) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers </span>
+      <div  class="chart-container" id="svg_vuseful-BUNa"></div>
+    </div>
+
+    <div id='vprocess-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling </span>
+      <div  class="chart-container" id="svg_vprocess-HOUa"></div>
+    </div>
+
+    <div id='vprocess-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances </span>
+      <div  class="chart-container" id="svg_vprocess-HBLa"></div>
+    </div>
+
+    <div id='vprocess-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances </span>
+      <div  class="chart-container" id="svg_vprocess-HWHa"></div>
+    </div>
+
+    <div id='vprocess-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting </span>
+      <div  class="chart-container" id="svg_vprocess-HLHa"></div>
+    </div>
+
+    <div id='vprocess-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+      <div  class="chart-container" id="svg_vprocess-SERa"></div>
+    </div>
+
+    <div id='vprocess-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+      <div  class="chart-container" id="svg_vprocess-AGRa"></div>
+    </div>
+    <div id='vprocess-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel </span>
+      <div  class="chart-container" id="svg_vprocess-ISa"></div>
+    </div>
+    <div id='vprocess-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_vprocess-NFa"></div>
+    </div>
+    <div id='vprocess-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_vprocess-CHa"></div>
+    </div>
+    <div id='vprocess-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials</span>
+      <div  class="chart-container" id="svg_vprocess-BMa"></div>
+    </div>
+    <div id='vprocess-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp</span>
+      <div  class="chart-container" id="svg_vprocess-PPa"></div>
+    </div>
+    <div id='vprocess-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp </span>
+      <div  class="chart-container" id="svg_vprocess-FDa"></div>
+    </div>
+    <div id='vprocess-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods </span>
+      <div  class="chart-container" id="svg_vprocess-EGa"></div>
+    </div>
+    <div id='vprocess-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries </span>
+      <div  class="chart-container" id="svg_vprocess-OTa"></div>
+    </div>
+    <div id='vprocess-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess ) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries </span>
+      <div  class="chart-container" id="svg_vprocess-NEa"></div>
+    </div>
+    <div id='vprocess-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport </span>
+      <div  class="chart-container" id="svg_vprocess-PTRa"></div>
+    </div>
+    <div id='vprocess-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport </span>
+      <div  class="chart-container" id="svg_vprocess-FTRa"></div>
+    </div>
+    <div id='vprocess-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline </span>
+      <div  class="chart-container" id="svg_vprocess-OTRa"></div>
+    </div>
+    <div id='vprocess-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Useful energy demand with savings per process (vprocess) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers </span>
+      <div  class="chart-container" id="svg_vprocess-BUNa"></div>
+    </div>
+
+        <div id='vprocess_fei-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling </span>
+      <div  class="chart-container" id="svg_vprocess_fei-HOUa"></div>
+    </div>
+
+    <div id='vprocess_fei-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances </span>
+      <div  class="chart-container" id="svg_vprocess_fei-HBLa"></div>
+    </div>
+
+    <div id='vprocess_fei-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances </span>
+      <div  class="chart-container" id="svg_vprocess_fei-HWHa"></div>
+    </div>
+
+    <div id='vprocess_fei-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting </span>
+      <div  class="chart-container" id="svg_vprocess_fei-HLHa"></div>
+    </div>
+
+    <div id='vprocess_fei-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+      <div  class="chart-container" id="svg_vprocess_fei-SERa"></div>
+    </div>
+
+    <div id='vprocess_fei-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+      <div  class="chart-container" id="svg_vprocess_fei-AGRa"></div>
+    </div>
+    <div id='vprocess_fei-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel </span>
+      <div  class="chart-container" id="svg_vprocess_fei-ISa"></div>
+    </div>
+    <div id='vprocess_fei-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_vprocess_fei-NFa"></div>
+    </div>
+    <div id='vprocess_fei-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_vprocess_fei-CHa"></div>
+    </div>
+    <div id='vprocess_fei-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials</span>
+      <div  class="chart-container" id="svg_vprocess_fei-BMa"></div>
+    </div>
+    <div id='vprocess_fei-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp</span>
+      <div  class="chart-container" id="svg_vprocess_fei-PPa"></div>
+    </div>
+    <div id='vprocess_fei-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp </span>
+      <div  class="chart-container" id="svg_vprocess_fei-FDa"></div>
+    </div>
+    <div id='vprocess_fei-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods </span>
+      <div  class="chart-container" id="svg_vprocess_fei-EGa"></div>
+    </div>
+    <div id='vprocess_fei-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries </span>
+      <div  class="chart-container" id="svg_vprocess_fei-OTa"></div>
+    </div>
+    <div id='vprocess_fei-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries </span>
+      <div  class="chart-container" id="svg_vprocess_fei-NEa"></div>
+    </div>
+    <div id='vprocess_fei-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport </span>
+      <div  class="chart-container" id="svg_vprocess_fei-PTRa"></div>
+    </div>
+    <div id='vprocess_fei-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport </span>
+      <div  class="chart-container" id="svg_vprocess_fei-FTRa"></div>
+    </div>
+    <div id='vprocess_fei-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline </span>
+      <div  class="chart-container" id="svg_vprocess_fei-OTRa"></div>
+    </div>
+    <div id='vprocess_fei-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy intensity (vprocess_fei) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers </span>
+      <div  class="chart-container" id="svg_vprocess_fei-BUNa"></div>
+    </div>
+
+    <div id='venergy-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling </span>
+      <div  class="chart-container" id="svg_venergy-HOUa"></div>
+    </div>
+
+    <div id='venergy-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances </span>
+      <div  class="chart-container" id="svg_venergy-HBLa"></div>
+    </div>
+
+    <div id='venergy-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances </span>
+      <div  class="chart-container" id="svg_venergy-HWHa"></div>
+    </div>
+
+    <div id='venergy-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting </span>
+      <div  class="chart-container" id="svg_venergy-HLHa"></div>
+    </div>
+
+    <div id='venergy-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+      <div  class="chart-container" id="svg_venergy-SERa"></div>
+    </div>
+
+    <div id='venergy-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+      <div  class="chart-container" id="svg_venergy-AGRa"></div>
+    </div>
+    <div id='venergy-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel </span>
+      <div  class="chart-container" id="svg_venergy-ISa"></div>
+    </div>
+    <div id='venergy-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_venergy-NFa"></div>
+    </div>
+    <div id='venergy-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_venergy-CHa"></div>
+    </div>
+    <div id='venergy-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials</span>
+      <div  class="chart-container" id="svg_venergy-BMa"></div>
+    </div>
+    <div id='venergy-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp</span>
+      <div  class="chart-container" id="svg_venergy-PPa"></div>
+    </div>
+    <div id='venergy-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp </span>
+      <div  class="chart-container" id="svg_venergy-FDa"></div>
+    </div>
+    <div id='venergy-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods </span>
+      <div  class="chart-container" id="svg_venergy-EGa"></div>
+    </div>
+    <div id='venergy-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries </span>
+      <div  class="chart-container" id="svg_venergy-OTa"></div>
+    </div>
+    <div id='venergy-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries </span>
+      <div  class="chart-container" id="svg_venergy-NEa"></div>
+    </div>
+    <div id='venergy-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport </span>
+      <div  class="chart-container" id="svg_venergy-PTRa"></div>
+    </div>
+    <div id='venergy-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport </span>
+      <div  class="chart-container" id="svg_venergy-FTRa"></div>
+    </div>
+    <div id='venergy-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline </span>
+      <div  class="chart-container" id="svg_venergy-OTRa"></div>
+    </div>
+    <div id='venergy-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (venergy) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers </span>
+      <div  class="chart-container" id="svg_venergy-BUNa"></div>
+    </div>
+
+    <div id='CO2-HOUa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Heating &amp Cooling </span>
+      <div  class="chart-container" id="svg_CO2-HOUa"></div>
+    </div>
+
+    <div id='CO2-HBLa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Black Appliances </span>
+      <div  class="chart-container" id="svg_CO2-HBLa"></div>
+    </div>
+
+    <div id='CO2-HWHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> White Appliances </span>
+      <div  class="chart-container" id="svg_CO2-HWHa"></div>
+    </div>
+
+    <div id='CO2-HLHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential <i class="fa fa-chevron-right" aria-hidden="true"></i> Lighting </span>
+      <div  class="chart-container" id="svg_CO2-HLHa"></div>
+    </div>
+
+    <div id='CO2-SERa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+      <div  class="chart-container" id="svg_CO2-SERa"></div>
+    </div>
+
+    <div id='CO2-AGRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+      <div  class="chart-container" id="svg_CO2-AGRa"></div>
+    </div>
+    <div id='CO2-ISa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Iron &amp Steel </span>
+      <div  class="chart-container" id="svg_CO2-ISa"></div>
+    </div>
+    <div id='CO2-NFa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Ferrous </span>
+      <div  class="chart-container" id="svg_CO2-NFa"></div>
+    </div>
+    <div id='CO2-CHa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Chemicals</span>
+      <div  class="chart-container" id="svg_CO2-CHa"></div>
+    </div>
+    <div id='CO2-BMa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Building Materials</span>
+      <div  class="chart-container" id="svg_CO2-BMa"></div>
+    </div>
+    <div id='CO2-PPa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Paper &amp Pulp</span>
+      <div  class="chart-container" id="svg_CO2-PPa"></div>
+    </div>
+    <div id='CO2-FDa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Food, Drink &amp Pulp </span>
+      <div  class="chart-container" id="svg_CO2-FDa"></div>
+    </div>
+    <div id='CO2-EGa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Equipment Goods </span>
+      <div  class="chart-container" id="svg_CO2-EGa"></div>
+    </div>
+    <div id='CO2-OTa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Industries </span>
+      <div  class="chart-container" id="svg_CO2-OTa"></div>
+    </div>
+    <div id='CO2-NEa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Non Energy Industries </span>
+      <div  class="chart-container" id="svg_CO2-NEa"></div>
+    </div>
+    <div id='CO2-PTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport </span>
+      <div  class="chart-container" id="svg_CO2-PTRa"></div>
+    </div>
+    <div id='CO2-FTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport </span>
+      <div  class="chart-container" id="svg_CO2-FTRa"></div>
+    </div>
+    <div id='CO2-OTRa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Transport &amp Pipeline </span>
+      <div  class="chart-container" id="svg_CO2-OTRa"></div>
+    </div>
+    <div id='CO2-BUNa' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Final energy demand (CO2) <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Bunkers </span>
+      <div  class="chart-container" id="svg_CO2-BUNa"></div>
+    </div>
+
+
+    <div id='vlosses' class="chart-container" style="display:none;"><span class="Content_Title"><i class="fa fa-chevron-right" aria-hidden="true"></i> Transmission and distribution losses (vlosses)</span>
+      <div  class="chart-container" id="svg_vlosses"></div>
+    </div>
+
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+ 
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="RunScenario_main.js"></script>
+<script type="text/javascript" src="signup-login.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="graphs.js"></script>-->
+</body>
+</html> 

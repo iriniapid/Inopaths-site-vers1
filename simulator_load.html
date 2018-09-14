@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://use.fontawesome.com/10c162a72f.js"></script> 
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+<link href="http://fonts.googleapis.com/css?family=Hind+Guntur" rel="stylesheet">
+<link href="new_site.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="InLine">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+          <!-- The button below creates the hamburger drop-down for the hidden navbar elements-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-menu-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+          <a href="#" class="navbar-brand"></a> <!--.navbar-brand is for titling the navbar with a company's name or logo located on the left corner-->
+        
+        <div class="collapse navbar-collapse" id="my-navbar-menu-collapse"> <!--this class hides  the navbar elements included when the browser's window is minimized.The id is for the drop-down hamburger button to recognize-->
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Mission</a>
+            <li><a href="#">Objectives</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">New Tools</a></li>
+            <li><a href="#">Publications</a></li>
+            <div id="log-sign" class="nav navbar-nav "></div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container" id="Introduction">
+    <h1 class="title">Interactive Decarbonisation Simulator</h1>
+  </div>
+</div>
+
+  <div class="main">
+    <div class="nav-side-menu">    
+      <div class="brand">Targets</div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <div class="menu-list">
+          <ul class="menu-content collapsed">
+            <li data-toggle="collapse" data-target="#Policy_Targets" class="collapsed" rel="Policy_Targs">
+                <i class="fa fa-lg"></i> Policy Targets <span class="arrow"></span>
+            </li>
+            <ul class="sub-menu collapse" id="Policy_Targets" >
+                <li  data-toggle="collapse" data-target="#CO2_Reduction" class="collapsed" rel="CO2_reduct">
+                  <i class="fa fa-lg"></i>CO2 Reduction <span class="arrow"></span>
+                </li>
+                  <ul class="targets collapse" id="CO2_Reduction">
+                    <li class="final_level"><a href="#" rel="Overall_CO2">Overall CO2 reduction (All sectors)</a></li>
+                    <li class="final_level"><a href="#" rel="ETS-Sector">ETS Sector</a></li>
+                    <li class="final_level"><a href="#" rel="Non-ETS-Sector">Non ETS Sector</a></li>
+                  </ul> 
+                <li data-toggle="collapse" data-target="#Overall_RES_Share" class="collapsed" rel="RES_Share">
+                  <i class="fa fa-lg"></i>RES Share <span class="arrow"></span>
+                </li>
+                  <ul class="targets collapse" id="Overall_RES_Share">
+                    <li class="final_level"><a href="#" rel="Overall_RES">Overall RES Share (All sectors)</a></li>
+                    <li class="final_level"><a href="#" rel="RES-HR">RES-H&ampC</a></li>
+                    <li class="final_level"><a href="#" rel="RES-E">RES-E</a></li>
+                    <li class="final_level"><a href="#" rel="RES-T">RES-T</a></li>
+                  </ul>
+                  <li data-toggle="collapse" data-target="#Energy_Savings" class="collapsed" rel="Energy_saves">
+                  <i class="fa fa-lg"></i>Energy Savings<span class="arrow"></span>
+                </li>
+                  <ul class="targets collapse" id="Energy_Savings">
+                    <li class="final_level"><a href="#" rel="Overall_ESavings">Overall Energy Savings (All sectors)</a></li>
+                    <li class="final_level"><a href="#" rel="industry">Industry</a></li>
+                    <li class="final_level"><a href="#" rel="Residential">Residential</a></li>
+                    <li class="final_level"><a href="#" rel="tertiary">Tertiary</a></li>
+                    <li class="final_level"><a href="#" rel="transport">Transport</a></li>
+                  </ul> 
+            </ul>
+            <li data-toggle="collapse" data-target="#Demand" class="collapsed" rel="demand_rel">
+                <i class="fa fa-lg"></i> Demand <span class="arrow"></span>
+            </li>
+            <ul class="sub-menu collapse" id="Demand">
+                <li data-toggle="collapse" data-target="#Industry" class="collapsed" rel="industry_rel">
+                  <i class="fa fa-lg"></i>Industry <span class="arrow"></span>
+                </li>
+                  <ul class="targets collapse" id="Industry">
+                    <li class="final_level"><a href="#" rel="CCS_in_industry">Use of CCS in Industry</a></li>
+                    <li class="final_level"><a href="#" rel="H2_in_industry">Share of H2 in Industry</a></li>
+                  </ul> 
+                <li data-toggle="collapse" data-target="#Domestic" class="collapsed" rel="domestic_rel">
+                  <i class="fa fa-lg"></i>Domestic <span class="arrow"></span>
+                </li>
+                  <ul class="targets collapse" id="Domestic">
+                    <li class="final_level"><a href="#" rel="d_refurbishment">Refurbishment rate/insulation level of buildings</a></li>
+                    <li class="final_level"><a href="#" rel="d_air_conditioning">Share of heat pumps/deployment of air conditioning</a></li>
+                    <li class="final_level"><a href="#" rel="d_district_heating">Share of houses heated through district heating systems</a></li>
+                  </ul> 
+                  <li data-toggle="collapse" data-target="#Tertiary" class="collapsed" rel="tertiary_rel">
+                    <i class="fa fa-lg"></i>Tertiary <span class="arrow"></span>
+                  </li>
+                  <ul class="targets collapse" id="Tertiary">
+                    <li class="final_level"><a href="#" rel='Services'>Services</a></li>
+                    <li class="final_level"><a href="#" rel='Agriculture'>Agriculture</a></li>
+                    <li class="final_level"><a href="#" rel="t_refurbishment">Refurbishment rate/insulation level of buildings</a></li>
+                    <li class="final_level"><a href="#" rel="t_air_conditioning">Share of heat pumps/deployment of air conditioning</a></li>
+                    <li class="final_level"><a href="#" rel="t_district_heating">Share of houses heated through district heating systems</a></li>
+                  </ul> 
+                  <li data-toggle="collapse" data-target="#Transport" class="collapsed" rel="transport_rel">
+                    <i class="fa fa-lg"></i>Transport <span class="arrow"></span>
+                  </li>
+                  <ul class="sub-menu collapse" id="Transport">
+                    <li data-toggle="collapse" data-target="#Passenger_Transport" class="collapsed">
+                      <i class="fa fa-lg"></i>Passenger Transport<span class="arrow"></span>
+                    </li>
+                    <ul class="target-content collapse" id="Passenger_Transport">
+                      <li class="final_level"><a href="#" rel='pass_battery_vehicles'>Share of battery-electric vehicles</a></li>
+                      <li class="final_level"><a href="#" rel='pass_hydrogen_vehicles'>Share of hydrogen vehicles</a></li>
+                      <li class="final_level"><a href="#" rel='pass_biofuels'>Use of biofuels in transport</a></li>
+                      <li class="final_level"><a href="#" rel='pass_modal_shift'>Modal shift (from freight to passenger)</a></li>
+                    </ul>
+                    <li data-toggle="collapse" data-target="#Freight_Transport" class="collapsed">
+                      <i class="fa fa-lg"></i>Freight Transport<span class="arrow"></span>
+                    </li>
+                    <ul class="target-content collapse" id="Freight_Transport">
+                      <li class="final_level"><a href="#" rel='frei_battery_vehicles'>Share of battery-electric vehicles</a></li>
+                      <li class="final_level"><a href="#" rel='frei_hydrogen_vehicles'>Share of hydrogen vehicles</a></li>
+                      <li class="final_level"><a href="#" rel='frei_biofuels'>Use of biofuels in transport</a></li>
+                      <li class="final_level"><a href="#" rel='frei_modal_shift'>Modal shift (from passenger to freight)</a></li>
+                    </ul>
+                  </ul> 
+            </ul>
+
+            <li data-toggle="collapse" data-target="#Supply" class="collapsed" rel="supply_rel">
+                <i class="fa fa-lg"></i> Supply <span class="arrow"></span>
+            </li>
+            <ul class="sub-menu collapse" id="Supply">
+                <li data-toggle="collapse" data-target="#Electricity" class="collapsed" rel='electricity_rel'>
+                  <i class="fa fa-lg"></i>Electricity <span class="arrow"></span>
+                </li>
+                  <ul class="sub-menu collapse" id="Electricity">
+                    <li class="final_level" id="target-content"><a href="#" rel='Nuclear_Energy'>Nuclear Energy</a></li>
+                    <li data-toggle="collapse" data-target="#Renewables" class="collapsed" rel="renewables_rel">
+                      <span id="exception"> Renewables </span><span class="arrow"></span>
+                    </li>
+                    <ul class="target-content collapse" id="Renewables">
+                      <li class="final_level"><a href="#" rel='Hydro'>Hydro</a></li>
+                      <li class="final_level"><a href="#" rel='Wind'>Wind</a></li>
+                      <li class="final_level"><a href="#" rel='Solar'>Solar</a></li>
+                      <li class="final_level"><a href="#" rel='Biomass_Waste'>Biomass &amp Waste</a></li>
+                      <li class="final_level"><a href="#" rel='Geothermal_Heat'>Geothermal Heat</a></li>
+                    </ul>
+                    <li data-toggle="collapse" data-target="#Fossil_Fuels" class="collapsed" rel="fossil_fuels_rel">
+                      <span id="exception">Fossil Fuels</span><span class="arrow"></span>
+                    </li>
+                    <ul class="target-content collapse" id="Fossil_Fuels">
+                      <li class="final_level"><a href="#" rel='Coal_Lignite'>Coal &amp Lignite</a></li>
+                      <li class="final_level"><a href="#" rel='Oil_Products'>Oil Products</a></li>
+                      <li class="final_level"><a href="#" rel='Natural_Gas'>Natural Gas</a></li>
+                      <li class="final_level"><a href="#" rel='Coke_Blast'>Coke &amp Blast-Furnace Gases</a></li> 
+                    </ul>
+                    <li data-toggle="collapse" data-target="#Other_Fuels" class="collapsed" rel="other_fuels_rel">
+                      <span id="exception">Other Fuels</span><span class="arrow"></span>
+                    </li>
+                    <ul class="target-content collapse" id="Other_Fuels">
+                      <li class="final_level"><a href="#" rel='Hydrogen'>Hydrogen</a></li>
+                      <li class="final_level"><a href="#" rel='Methanol'>Methanol</a></li>
+                      <li class="final_level"><a href="#" rel='Clean_Gas'>Clean Gas</a></li>
+                    </ul>
+                    <li data-toggle="collapse" data-target="#Storage" class="collapsed" rel="storage_rel">
+                      <span id="exception">Storage</span><span class="arrow"></span>
+                    </li>
+                    <ul class="target-content collapse" id="Storage">
+                      <li class="final_level"><a href="#" rel='Batteries'>Batteries</a></li>
+                      <li class="final_level"><a href="#" rel='Power_X'>Power to X</a></li>
+                    </ul>
+                    <li class="final_level" id="target-content"><a href="#" rel='Imports_Exports'>Imports/Exports</a></li>
+                  </ul>
+                <li data-toggle="collapse" data-target="#Heat" class="collapsed" rel="heat_rel">
+                  <i class="fa fa-lg"></i>Heat <span class="arrow"></span>
+                </li>
+                  <ul class="targets collapse" id="Heat">
+                    <li class="final_level"><a href="#">A</a></li>
+                    <li class="final_level"><a href="#">A</a></li>
+                  </ul>
+            </ul>
+          </ul>
+        </div>
+        <li class="run">Run Scenario</li>
+    </div>
+
+    <div id="error" class="modal">
+    <span onclick="document.getElementById('error').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="Load_sc" class="modal-content animate" action="#" method="get">
+      <div class="comb_table">
+        <h4><b>This scenario is under construction.</b></h4>
+        
+          <table class="form"><h4>The possible combinations are:</h4>
+            <tr>
+              <th>Overall CO2 reduction</th>
+              <th>Overall RES share</th>
+              <th>Overall Energy savings</th>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>27</td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>27</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>27</td>
+              <td>33</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>27</td>
+              <td>35</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>27</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>30</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>33</td>
+              <td>33</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>35</td>
+              <td>35</td>
+            </tr>
+          </table>
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('error').style.display='none'" class="cancelbtn2">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+    <div class="container" id="main">
+          <div class="explain_container" id="concept" >
+            <h4 style="font-weight:bold;">Concept </h4>
+            <p >
+            The Interactive Decarbonisation Simulator (IDS) aims at providing an intuitive insight into decarbonisation strategies in order to facilitate stakeholder engagement. The tool will help understanding the mechanics of decarbonisation and the implications of modifying effort-sharing choices and other factors for the Member States and the EU.
+            The IDS aims at replicating the projection properties of the PRIMES model (country by country for the EU Member States and until 2050) while inviting users to interact with exogenous assumptions and visualising the implications for the decarbonisation pathways. 
+            By designing a few different decarbonisation strategies, the user can quickly get an intuitive understanding of which measures have a large effect and which don't, and where potential bottlenecks might lie.</p>
+            <h4 style="font-weight:bold;">Backend design</h4>
+            <p>The backend model development of the Prototype Interactive Decarbonisation Simulator (IDS) is based on PRIMES. PRIMES is a partial equilibrium modelling system that simulates an energy market equilibrium in the European Union and in each of its Member States. The model includes consistent EU carbon price trajectories. It proceeds in five-year steps and uses Eurostat data.</p>
+            <h4 style="font-weight:bold;">A note about the EUCO scenarios</h4>
+            <p>As part of the European Commission's Impact Assessment work in 2016, two core policy scenarios, several scenarios were built, with the EU Reference Scenario 2016 as a starting point. They model the achievement of the 2030 climate and energy targets as agreed by the European Council in 2014 .The main scenario, EUCO27 considers at least 40% cuts in greenhouse gas emissions (from 1990 levels), at least 27% share for renewable energy and at least 27% improvement in energy efficiency. Four variants to the EUCO27, considering different levels of energy efficiency improvements (30, 33, 35 and 40%) have been also considered to assess the impact of the proposed legal framework on energy efficiency.
+            </p>
+          </div>
+
+          <div id="Policy_Targs" class="explain_container" style="display:none;"></div>
+          <div id="CO2_reduct" class="explain_container" style="display:none;"> 
+            <p><span style="font-weight:bold;">CO2 emissions</span> from energy are computed by multiplying quantities of fossil fuel combusted (measures in energy terms) by emission factors, which are specific to fuels.</p>
+          </div>
+          <div id="RES_Share" class="explain_container" style="display:none;"> 
+            <p><span style="font-weight:bold;">RES share</span> as % of gross final energy is handled by PRIMES as a target, either by sector, country or EU-wide. Feed-in tariff and other supporting schemes for renewables are included.</p>
+          </div>
+          <div id="Energy_saves" class="explain_container" style="display:none;"> 
+            <p><span style="font-weight:bold;">Energy savings</span> are one of the possible combination of inputs that can be used for any given technology. These may include direct energy saving measures, but also other techniques (e.g. heat recovery). Energy efficiency measures include the use of more efficient equipment, insulation of buildings, control systems in industry etc.</p>
+          </div>
+          <div id="demand_rel" class="explain_container" style="display:none;"></div>
+          <div id="industry_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="tertiary_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="transport_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="supply_rel" class="explain_container" style="display:none;"></div>
+          <div id="electricity_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="renewables_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="fossil_fuels_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="other_fuels_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="storage_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+          <div id="heat_rel" class="explain_container" style="display:none;"> <h4></h4></div>
+
+          <div id='Overall_CO2' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> CO2 Reduction <i class="fa fa-chevron-right" aria-hidden="true"></i> Overall CO2 Reduction </span>
+            <div class="target_explain">
+              <h4 style="font-weight:bold;">Overall CO2 Reduction</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis nunc leo, in semper leo placerat ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris blandit, odio nec hendrerit cursus, nulla orci tempus elit, sed porta erat urna in dui. Nullam aliquam sem ut semper facilisis. Sed consequat velit urna, quis volutpat justo faucibus at. Nunc tincidunt nulla fermentum nisi dapibus rhoncus. Sed quis nisi id est sollicitudin fermentum quis nec turpis. Nulla facilisi. Nullam et sapien massa. Praesent vitae elementum libero, in mollis erat. Pellentesque quis neque massa. Mauris condimentum ipsum eget lorem sodales, nec scelerisque dolor porttitor. Aliquam blandit consequat ex nec venenatis. Vestibulum feugiat laoreet justo, nec efficitur velit ultrices ac.</p>
+            </div>
+            <div id="svg_overall-CO2"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output1">value: %</div></b>
+              <div class="Slider"><input id="slsvg_overall-CO2" type="range" step="40" class="slider" min="-40" max="0" name="output1" rel="0"></div> 
+            </div>
+              <form class="formoid" title="" method="get" >
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel='svg_overall-CO2'>
+                  </div>
+              </form>
+          </div>
+
+          <div id='ETS-Sector' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> CO2 Reduction <i class="fa fa-chevron-right" aria-hidden="true"></i> ETS-Sector</span>
+            <div class="target_explain">
+              <h4 style="font-weight:bold;">ETS-Sector</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis nunc leo, in semper leo placerat ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris blandit, odio nec hendrerit cursus, nulla orci tempus elit, sed porta erat urna in dui. Nullam aliquam sem ut semper facilisis. Sed consequat velit urna, quis volutpat justo faucibus at. Nunc tincidunt nulla fermentum nisi dapibus rhoncus. Sed quis nisi id est sollicitudin fermentum quis nec turpis. Nulla facilisi. Nullam et sapien massa. Praesent vitae elementum libero, in mollis erat. Pellentesque quis neque massa. Mauris condimentum ipsum eget lorem sodales, nec scelerisque dolor porttitor. Aliquam blandit consequat ex nec venenatis. Vestibulum feugiat laoreet justo, nec efficitur velit ultrices ac.</p>
+            </div>
+            <div id="svg_ets-sector"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output2">value: %</div></b>
+              <div class="Slider"><input id="slsvg_ets-sector" type="range" step="20" class="slider" min="-100" max="0" name="output2" rel="0"></div> 
+            </div>
+              <form class="formoid" title="" method="get" >
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel='svg_ets-sector'>
+                  </div>
+              </form>
+          </div>
+
+          <div id='Non-ETS-Sector' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> CO2 Reduction <i class="fa fa-chevron-right" aria-hidden="true"></i> Non-ETS-Sector</span>
+            <div class="target_explain">
+              <h4 style="font-weight:bold;">Non-ETS-Sector</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis nunc leo, in semper leo placerat ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris blandit, odio nec hendrerit cursus, nulla orci tempus elit, sed porta erat urna in dui. Nullam aliquam sem ut semper facilisis. Sed consequat velit urna, quis volutpat justo faucibus at. Nunc tincidunt nulla fermentum nisi dapibus rhoncus. Sed quis nisi id est sollicitudin fermentum quis nec turpis. Nulla facilisi. Nullam et sapien massa. Praesent vitae elementum libero, in mollis erat. Pellentesque quis neque massa. Mauris condimentum ipsum eget lorem sodales, nec scelerisque dolor porttitor. Aliquam blandit consequat ex nec venenatis. Vestibulum feugiat laoreet justo, nec efficitur velit ultrices ac.</p>
+            </div>
+            <div id="svg_Non-ETS-Sector"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output3">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Non-ETS-Sector" type="range" step="20" class="slider" min="-100" max="0" name="output3"></div>  
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Non-ETS-Sector">
+                  </div>
+              </form>  
+          </div>
+
+          <div id='Overall_RES' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i>RES Share <i class="fa fa-chevron-right" aria-hidden="true"></i> Overall RES Share </span>
+            <div class="target_explain">
+              <h4 style="font-weight:bold;">Overall RES Share</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis nunc leo, in semper leo placerat ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris blandit, odio nec hendrerit cursus, nulla orci tempus elit, sed porta erat urna in dui. Nullam aliquam sem ut semper facilisis. Sed consequat velit urna, quis volutpat justo faucibus at. Nunc tincidunt nulla fermentum nisi dapibus rhoncus. Sed quis nisi id est sollicitudin fermentum quis nec turpis. Nulla facilisi. Nullam et sapien massa. Praesent vitae elementum libero, in mollis erat. Pellentesque quis neque massa. Mauris condimentum ipsum eget lorem sodales, nec scelerisque dolor porttitor. Aliquam blandit consequat ex nec venenatis. Vestibulum feugiat laoreet justo, nec efficitur velit ultrices ac.</p>
+            </div>
+            <div id="svg_overall-RES"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output4">value: %</div></b>
+              <div class="Slider"><input id="slsvg_overall-RES" type="range" step="8.75" class="slider" min="0" max="35" name="output4"></div>   
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_overall-RES">
+                  </div>
+              </form>
+          </div>
+
+          <div id='RES-HR' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i>  RES Share <i class="fa fa-chevron-right" aria-hidden="true"></i> RES-H&ampC </span>
+            <div class="target_explain">
+              <h4 style="font-weight:bold;">RES-H&ampC</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis nunc leo, in semper leo placerat ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris blandit, odio nec hendrerit cursus, nulla orci tempus elit, sed porta erat urna in dui. Nullam aliquam sem ut semper facilisis. Sed consequat velit urna, quis volutpat justo faucibus at. Nunc tincidunt nulla fermentum nisi dapibus rhoncus. Sed quis nisi id est sollicitudin fermentum quis nec turpis. Nulla facilisi. Nullam et sapien massa. Praesent vitae elementum libero, in mollis erat. Pellentesque quis neque massa. Mauris condimentum ipsum eget lorem sodales, nec scelerisque dolor porttitor. Aliquam blandit consequat ex nec venenatis. Vestibulum feugiat laoreet justo, nec efficitur velit ultrices ac.</p>
+            </div>
+            <div id="svg_RES-HR"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output5">value: %</div></b>
+              <div class="Slider"><input id="slsvg_RES-HR" type="range" step="20" class="slider" min="0" max="100" name="output5"></div>   
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_RES-HR">
+                  </div>
+              </form>
+          </div>
+
+          <div id='RES-E' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i>  RES Share <i class="fa fa-chevron-right" aria-hidden="true"></i> RES-E </span>
+            <div class="target_explain">
+              <h4 style="font-weight:bold;">RES-E</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis nunc leo, in semper leo placerat ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris blandit, odio nec hendrerit cursus, nulla orci tempus elit, sed porta erat urna in dui. Nullam aliquam sem ut semper facilisis. Sed consequat velit urna, quis volutpat justo faucibus at. Nunc tincidunt nulla fermentum nisi dapibus rhoncus. Sed quis nisi id est sollicitudin fermentum quis nec turpis. Nulla facilisi. Nullam et sapien massa. Praesent vitae elementum libero, in mollis erat. Pellentesque quis neque massa. Mauris condimentum ipsum eget lorem sodales, nec scelerisque dolor porttitor. Aliquam blandit consequat ex nec venenatis. Vestibulum feugiat laoreet justo, nec efficitur velit ultrices ac.</p>
+            </div>
+            <div id="svg_RES-E"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output6">value: %</div></b>
+              <div class="Slider"><input id="slsvg_RES-E" type="range" step="20" class="slider" min="0" max="100" name="output6"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_RES-E">
+                  </div>
+              </form>  
+          </div>
+
+          <div id='RES-T' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> Overall RES Share <i class="fa fa-chevron-right" aria-hidden="true"></i> RES-T </span>
+            <div id="svg_RES-T"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output7">value: %</div></b>
+              <div class="Slider"><input id="slsvg_RES-T" type="range" step="20" class="slider" min="0" max="100" name="output7"></div>   
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_RES-T">
+                  </div>
+              </form>   
+          </div>
+
+           <div id='Overall_ESavings' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> Energy Savings <i class="fa fa-chevron-right" aria-hidden="true"></i> Overall Energy Savings </span>
+            <div id="svg_overall-esavings"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output8">value: %</div></b>
+              <div class="Slider"><input id="slsvg_overall-esavings" type="range" step="8" class="slider" min="0" max="40" name="output8"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_overall-esavings">
+                  </div>
+            </form> 
+          </div>
+
+          <div id='industry' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> Energy Savings <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry </span>
+            <div id="svg_industry"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output9">value: %</div></b>
+              <div class="Slider"><input id="slsvg_industry" type="range" step="20" class="slider" min="-100" max="0" name="output9"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_industry">
+                  </div>
+            </form> 
+          </div>
+
+          <div id='Residential' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> Energy Savings <i class="fa fa-chevron-right" aria-hidden="true"></i> Residential </span>
+            <div id="svg_Residential"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output10">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Residential" type="range" step="20" class="slider" min="-100" max="0" name="output10"></div>
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Residential">
+                  </div>
+            </form>
+          </div>
+
+          <div id='tertiary' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> Energy Savings <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary </span>
+            <div id="svg_tertiary"></div>
+            <b>
+            <div id="slider_box">
+              <div class="output" id="output11">value: %</div></b>
+              <div class="Slider"><input id="slsvg_tertiary" type="range" step="20" class="slider" min="-100" max="0" name="output11"></div>  
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_tertiary">
+                  </div>
+            </form> 
+          </div>
+
+          <div id='transport' style="display:none;"><span class="Content_Title">Policy targets <i class="fa fa-chevron-right" aria-hidden="true"></i> Energy Savings <i class="fa fa-chevron-right" aria-hidden="true"></i> Transport </span>
+            <div id="svg_transport"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output12">value: %</div></b>
+              <div class="Slider"><input id="slsvg_transport" type="range" step="20" class="slider" min="-100" max="0" name="output12"></div>  
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_transport">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='CCS_in_industry' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Use of CCS in Industry </span>
+            <div id="svg_CCS_in_industry"></div>
+            <div id="slider_box">
+               <b><div class="output" id="output13">value: %</div></b>
+              <div class="Slider"><input id="slsvg_CCS_in_industry" type="range" step="20" class="slider" min="0" max="100" name="output13"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_CCS_in_industry">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='H2_in_industry' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Industry <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of H2 in Industry </span>
+            <div id="svg_H2_in_industry"></div>
+            <div id="slider_box">
+               <b><div class="output" id="output14">value: %</div></b>
+              <div class="Slider"><input id="slsvg_H2_in_industry" type="range" step="20" class="slider" min="0" max="100" name="output14"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_H2_in_industry">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='d_refurbishment' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Domestic <i class="fa fa-chevron-right" aria-hidden="true"></i> Refurbishment rate/insulation level of buildings</span>
+            <div id="svg_d_refurbishment"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output15">value: %</div></b>
+              <div class="Slider"><input id="slsvg_d_refurbishment" type="range" step="20" class="slider" min="0" max="100" name="output15"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_d_refurbishment">
+                  </div>
+            </form>  
+          </div>          
+
+          <div id='d_air_conditioning' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Domestic <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of heat pumps/deployment of air conditioning </span>
+            <div id="svg_d_air_conditioning"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output16">value: %</div></b>
+              <div class="Slider"><input id="slsvg_d_air_conditioning" type="range" step="20" class="slider" min="0" max="100" name="output16"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_d_air_conditioning">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='d_district_heating' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Domestic <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of houses heated through district heating systems </span>
+            <div id="svg_d_district_heating"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output17">value: %</div></b>
+              <div class="Slider"><input id="slsvg_d_district_heating" type="range" step="20" class="slider" min="0" max="100" name="output17"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_d_district_heating">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='Services' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Services </span>
+            <div id="svg_Services"></div>
+            <div id="slider_box">
+               <b><div class="output" id="output18">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Services" type="range" step="20" class="slider" min="0" max="100" name="output18"></div> 
+             
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Services">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='Agriculture' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Agriculture </span>
+            <div id="svg_Agriculture"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output19">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Agriculture" type="range" step="20" class="slider" min="0" max="100" name="output19"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_Agriculture">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='t_refurbishment' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Refurbishment rate/insulation level of buildings</span>
+            <div id="svg_t_refurbishment"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output20">value: %</div></b>
+              <div class="Slider"><input id="slsvg_t_refurbishment" type="range" step="20" class="slider" min="0" max="100" name="output20"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_t_refurbishment">
+                  </div>
+            </form>  
+          </div>          
+
+          <div id='t_air_conditioning' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of heat pumps/deployment of air conditioning </span>
+            <div id="svg_t_air_conditioning"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output21">value: %</div></b>
+              <div class="Slider"><input id="slsvg_t_air_conditioning" type="range" step="20" class="slider" min="0" max="100" name="output21"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_t_air_conditioning">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='t_district_heating' style="display:none;">
+            <span class="Content_Title"> Demand <i class="fa fa-chevron-right" aria-hidden="true"></i> Tertiary <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of houses heated through district heating systems </span>
+            <div id="svg_t_district_heating"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output22">value: %</div></b>
+              <div class="Slider"><input id="slsvg_t_district_heating" type="range" step="20" class="slider" min="0" max="100" name="output22"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value"
+                      rel="svg_t_district_heating">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='pass_battery_vehicles' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of battery-electric vehicles </span>
+            <div id="svg_pass_battery_vehicles"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output23">value: %</div></b>
+              <div class="Slider"><input id="slsvg_pass_battery_vehicles" type="range" step="20" class="slider" min="0" max="100" name="output23"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_pass_battery_vehicles">
+                  </div>
+            </form>
+          </div>
+
+          <div id='pass_hydrogen_vehicles' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of hydrogen vehicles </span>
+            <div id="svg_pass_hydrogen_vehicles"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output24">value: %</div></b>
+              <div class="Slider"><input id="slsvg_pass_hydrogen_vehicles" type="range" step="20" class="slider" min="0" max="100" name="output24"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_pass_hydrogen_vehicles">
+                  </div>
+            </form>
+          </div>
+
+          <div id='pass_biofuels' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Use of biofuels in transport </span>
+            <div id="svg_pass_biofuels"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output25">value: %</div></b>
+              <div class="Slider"><input id="slsvg_pass_biofuels" type="range" step="20" class="slider" min="0" max="100" name="output25"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_pass_biofuels">
+                  </div>
+            </form>
+          </div>
+
+          <div id='pass_modal_shift' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Passenger Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Modal shift (from freight to passenger) </span>
+            <div id="svg_pass_modal_shift"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output26">value: %</div></b>
+              <div class="Slider"><input id="slsvg_pass_modal_shift" type="range" step="20" class="slider" min="0" max="100" name="output26"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_pass_modal_shift">
+                  </div>
+            </form>
+          </div>
+
+          <div id='frei_battery_vehicles' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of battery-electric vehicles </span>
+            <div id="svg_frei_battery_vehicles"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output27">value: %</div></b>
+              <div class="Slider"><input id="slsvg_frei_battery_vehicles" type="range" step="20" class="slider" min="0" max="100" name="output27"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_frei_battery_vehicles">
+                  </div>
+            </form>
+          </div>
+
+          <div id='frei_hydrogen_vehicles' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Share of hydrogen vehicles </span>
+            <div id="svg_frei_hydrogen_vehicles"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output28">value: %</div></b>
+              <div class="Slider"><input id="slsvg_frei_hydrogen_vehicles" type="range" step="20" class="slider" min="0" max="100" name="output28"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_frei_hydrogen_vehicles">
+                  </div>
+            </form>
+          </div>
+
+          <div id='frei_biofuels' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Use of biofuels in transport </span>
+            <div id="svg_frei_biofuels"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output29">value: %</div></b>
+              <div class="Slider"><input id="slsvg_frei_biofuels" type="range" step="20" class="slider" min="0" max="100" name="output29"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_frei_biofuels">
+                  </div>
+            </form>
+          </div>
+
+          <div id='frei_modal_shift' style="display:none;">
+            <span class="Content_Title"> Demand<i class="fa fa-chevron-right" aria-hidden="true"></i> Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Freight Transport <i class="fa fa-chevron-right" aria-hidden="true"></i> Modal shift (from passenger to freight) </span>
+            <div id="svg_frei_modal_shift"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output30">value: %</div></b>
+              <div class="Slider"><input id="slsvg_frei_modal_shift" type="range" step="20" class="slider" min="0" max="100" name="output30"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_frei_modal_shift">
+                  </div>
+            </form>
+          </div>
+
+          <div id='Nuclear_Energy' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Nuclear Energy </span>
+            <div id="svg_Nuclear_Energy"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output31">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Nuclear_Energy" type="range" step="20" class="slider" min="0" max="100" name="output31"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Nuclear_Energy">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='Hydro' style="display:none;">
+            <span class="Content_Title">Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Renewables <i class="fa fa-chevron-right" aria-hidden="true"></i> Hydro </span>
+            <div id="svg_Hydro"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output32">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Hydro" type="range" step="20" class="slider" min="0" max="100" name="output32"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Hydro">
+                  </div>
+            </form>
+          </div>
+
+          <div id='Solar' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Renewables <i class="fa fa-chevron-right" aria-hidden="true"></i> Solar </span>
+            <div id="svg_Solar"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output33">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Solar" type="range" step="20" class="slider" min="0" max="100" name="output33"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Solar">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='Wind' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Renewables <i class="fa fa-chevron-right" aria-hidden="true"></i> Wind </span>
+            <div id="svg_Wind"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output34">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Wind" type="range" step="20" class="slider" min="0" max="100" name="output34"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Wind">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='Biomass_Waste' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Renewables <i class="fa fa-chevron-right" aria-hidden="true"></i> Biomass &amp Waste </span>
+            <div id="svg_Biomass_Waste"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output35">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Biomass_Waste" type="range" step="20" class="slider" min="0" max="100" name="output35"></div>  
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Biomass_Waste">
+                  </div>
+            </form>
+          </div>
+
+          <div id='Geothermal_Heat' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Renewables <i class="fa fa-chevron-right" aria-hidden="true"></i> Geothermal Heat </span>
+            <div id="svg_Geothermal_Heat"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output36">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Geothermal_Heat" type="range" step="20" class="slider" min="0" max="100" name="output36"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Geothermal_Heat">
+                  </div>
+            </form>
+          </div>
+
+          <div id='Coal_Lignite' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Fossil Fuels <i class="fa fa-chevron-right" aria-hidden="true"></i> Coal &amp Lignite </span>
+            <div id="svg_Coal_Lignite"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output37">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Coal_Lignite" type="range" step="20" class="slider" min="0" max="100" name="output37"></div>
+            </div>
+            <form class="formoid" title="" method="get" >
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Coal_Lignite">
+                  </div>
+            </form>
+          </div>
+
+          <div id='Oil_Products' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Fossil Fuels <i class="fa fa-chevron-right" aria-hidden="true"></i> Oil Products </span>
+            <div id="svg_Oil_Products"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output38">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Oil_Products" type="range" step="20" class="slider" min="0" max="100" name="output38"></div>
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Oil_Products">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='Natural_Gas' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Fossil Fuels <i class="fa fa-chevron-right" aria-hidden="true"></i> Natural Gas </span>
+            <div id="svg_Natural_Gas"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output39">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Natural_Gas" type="range" step="20" class="slider" min="0" max="100" name="output39"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Natural_Gas">
+                  </div>
+            </form>
+          </div>
+
+          <div id='Coke_Blast' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Fossil Fuels <i class="fa fa-chevron-right" aria-hidden="true"></i> Coke &amp Blast-Furnace Gases </span>
+            <div id="svg_Coke_Blast"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output40">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Coke_Blast" id="slsvg_Natural_Gas" type="range" step="20" class="slider" min="0" max="100" name="output40"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Coke_Blast">
+                  </div>
+            </form>
+          </div>
+
+          <div id='Hydrogen' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Fuels <i class="fa fa-chevron-right" aria-hidden="true"></i> Hydrogen </span>
+            <div id="svg_Hydrogen"></div>
+            <div id="slider_box"><b><div class="output" id="output41">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Hydrogen" type="range" step="20" class="slider" min="0" max="100" name="output41"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Hydrogen">
+                  </div>
+            </form> 
+          </div>
+
+          <div id='Methanol' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Fuels <i class="fa fa-chevron-right" aria-hidden="true"></i> Methanol </span>
+            <div id="svg_Methanol"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output42">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Methanol" type="range" step="20" class="slider" min="0" max="100" name="output42"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Methanol">
+                  </div>
+            </form>  
+          </div>
+
+          <div id='Clean_Gas' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Other Fuels <i class="fa fa-chevron-right" aria-hidden="true"></i> Clean Gas </span>
+            <div id="svg_Clean_Gas"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output43">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Clean_Gas" type="range" step="20" class="slider" min="0" max="100" name="output43"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Clean_Gas">
+                  </div>
+            </form> 
+          </div>
+
+          <div id='Batteries' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Storage <i class="fa fa-chevron-right" aria-hidden="true"></i> Batteries </span>
+            <div id="svg_Batteries"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output44">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Batteries" type="range" step="20" class="slider" min="0" max="100" name="output44"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Batteries">
+                  </div>
+            </form> 
+          </div>
+
+          <div id='Imports_Exports' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Imports/Exports </span>
+            <div id="svg_Imports_Exports"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output45">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Imports_Exports" type="range" step="20" class="slider" min="0" max="100" name="output45"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Imports_Exports">
+                  </div>
+            </form> 
+          </div>
+
+          <div id='Power_X' style="display:none;">
+            <span class="Content_Title"> Supply <i class="fa fa-chevron-right" aria-hidden="true"></i> Electricity <i class="fa fa-chevron-right" aria-hidden="true"></i> Storage <i class="fa fa-chevron-right" aria-hidden="true"></i> Power to X </span>
+            <div id="svg_Power_X"></div>
+            <div id="slider_box">
+              <b><div class="output" id="output46">value: %</div></b>
+              <div class="Slider"><input id="slsvg_Power_X" type="range" step="20" class="slider" min="0" max="100" name="output46"></div> 
+            </div>
+            <form class="formoid" title="" method="get">
+                  <div>
+                      <input type="submit" class="btn-info" id="submitButton"  name="submitButton" value="Submit Value" rel="svg_Power_X">
+                  </div>
+            </form>  
+          </div>
+
+        </div>
+    </div>
+  </div>  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="logedin.js"></script>  
+<script type="text/javascript" src="simulator_load.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="graphs.js"></script>-->
+</body>
+</html> 
